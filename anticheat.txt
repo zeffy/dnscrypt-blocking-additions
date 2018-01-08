@@ -1,0 +1,29 @@
+# INCA GameGuard
+*.gameguard.co.kr
+*.inca.co.kr
+*.nprotect.com
+*.nprotect.co.kr
+*.nprotect.net
+gameguard.co.kr
+inca.co.kr
+nprotect.com
+nprotect.co.kr
+nprotect.net
+nprotect.bladeandsoul.com
+
+# My.com
+stat.gc.my.com
+
+# NetEase
+ac.ro.gmru.net
+gad.netease.com
+
+# Wellbia XIGNCODE
+*xigncode*.amazonaws.com
+*xc*.amazonaws.com
+*gamesecurity*.amazonaws.com
+*gglogserver*.amazonaws.com
+
+# Daum Games
+*.defence-daumgameseu.com
+defence-daumgameseu.com
