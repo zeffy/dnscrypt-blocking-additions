@@ -1,2 +1,7 @@
 # NVIDIA
 telemetry.nvidia.com
+
+# Microsoft Visual Studio
+dc.services.visualstudio.com
+sxpdata.microsoft.com
+sxp.microsoft.com
