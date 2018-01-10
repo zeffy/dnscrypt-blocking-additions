@@ -50,4 +50,4 @@ entrust.net
 crl.microsoft.com
 
 ## NTP Pool Project
-*.pool.ntp.org
+ntp.org
