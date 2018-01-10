@@ -1,0 +1,53 @@
+## Some default exclusions
+invalid
+amazon.com
+cdnetworks.com
+ovh.net
+pusher.com
+pusherapp.com
+spotify.com
+
+## Local domains
+localdomain
+local
+lan
+
+## Amazon AWS
+s3.amazonaws.com
+elasticbeanstalk.com
+
+## Popular CDNs
+googleapis.com
+gstatic.com
+ajax.aspnetcdn.com
+ajax.microsoft.com
+cdnjs.cloudflare.com
+code.jquery.com
+cdn.jsdelivr.net
+yastatic.net
+yandex.st
+libs.baidu.com
+lib.sinaapp.com
+upcdn.b0.upaiyun.com
+
+## Adobe website
+adobe.com
+
+## Discord
+discordapp.com
+discord.gg
+
+## CRL / OCSP
+comodoca4.com
+comodoca.com
+symcb.com
+symcd.com
+digicert.com
+letsencrypt.org
+godaddy.com
+starfieldtech.com
+entrust.net
+crl.microsoft.com
+
+## NTP Pool Project
+*.pool.ntp.org

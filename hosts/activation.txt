@@ -2,12 +2,6 @@
 activation.acronis.com 
 web-api-tih.acronis.com
 
-# Adobe
-activate.adobe.com
-lmlicenses.wip4.adobe.com
-lm.licenses.adobe.com
-na1r.services.adobe.com
-
 # BitSum
 activate.bitsum.com
 
