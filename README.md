@@ -19,7 +19,7 @@ File name | Description
 `domains-blacklist.conf`* | List of various hosts files from around the web.
 `domains-blacklist-local-additions.txt`* | Local blacklist additions.
 `domains-exclusions.conf` | List of various hosts files that you want to **exclude** from the blacklist. Currently contains a list of known Windows Update hosts from crazy-max's [WindowsSpyBlocker] project.
-`domains-exclusions-local-additions.txt` | List of exclusions to filter out more zealous hosts lists so less things break.
+`domains-exclusions-local-additions.txt`* | List of exclusions to filter out more zealous hosts lists so less things break.
 `generate-domains-list.py`* | Modified version of the `generate-domains-blacklist.py` script from dnscrypt.
 
 ### How to use `generate-domains-list.py`
@@ -37,4 +37,4 @@ Parameter | Default value | Description
 `-x` or `--exclusions-config` | `domains-exclusions.conf` | file containing a set of names to exclude from the blacklist
 `-i` or `--ignore-retrieval-failure` | - | generate list even if some urls couldn't be retrieved
 
-[WindowsSpyBlocker]: https://github.comcom/crazy-max/WindowsSpyBlocker
+[WindowsSpyBlocker]: https://github.com/crazy-max/WindowsSpyBlocker
