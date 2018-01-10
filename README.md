@@ -7,7 +7,7 @@ File name | Description
 --------- | -----------
 `activation.txt` | License validation hosts for various software.
 `anticheat.txt` | Hosts related to various video game anti-cheat software.
-`miscellaneous.txt` | Other hosts that doesn't fit into either of the above files.
+`miscellaneous.txt` | Other hosts that don't fit into either of the above files.
 
 ## Files in the `contrib` folder
 
