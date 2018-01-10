@@ -6,7 +6,8 @@ nprotect.com
 nprotect.co.kr
 nprotect.net
 nprotect.bladeandsoul.com
-gglogserver*
+gglogserver3-lb-2062992349.ap-northeast-2.elb.amazonaws.com
+gamesecurity-ag-gateway2-lb-1120830243.ap-northeast-2.elb.amazonaws.com
 
 # My.com
 stat.gc.my.com
@@ -16,8 +17,10 @@ ac.ro.gmru.net
 gad.netease.com
 
 # Wellbia XIGNCODE
-xigncode*
-gamesecurity*
+xigncode.net
+xigncode.com
+wellbia.com
+xigncode-solomon-elb-1253180534.ap-northeast-2.elb.amazonaws.com
 
 # Daum Games
 defence-daumgameseu.com
