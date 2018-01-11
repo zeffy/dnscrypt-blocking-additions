@@ -51,3 +51,6 @@ crl.microsoft.com
 
 ## NTP Pool Project
 ntp.org
+
+## Other sites
+ipinfo.io
