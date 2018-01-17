@@ -54,3 +54,4 @@ ntp.org
 
 ## Other sites
 ipinfo.io
+icofx.ro
