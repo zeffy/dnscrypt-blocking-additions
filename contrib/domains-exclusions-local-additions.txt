@@ -30,9 +30,6 @@ libs.baidu.com
 lib.sinaapp.com
 upcdn.b0.upaiyun.com
 
-## Adobe website
-adobe.com
-
 ## Discord
 discordapp.com
 discord.gg
@@ -53,5 +50,6 @@ crl.microsoft.com
 ntp.org
 
 ## Other sites
+adobe.com
 ipinfo.io
 icofx.ro
