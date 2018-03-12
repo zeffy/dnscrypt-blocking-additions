@@ -13,3 +13,6 @@ telemetry.malwarebytes.com
 
 # Piriform
 license.piriform.com
+
+# SmartAssembly
+sawebservice.red-gate.com

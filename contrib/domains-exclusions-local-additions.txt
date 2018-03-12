@@ -54,3 +54,6 @@ adobe.com
 ipinfo.io
 icofx.ro
 www.advancedinstaller.com
+twitter.com
+icanhazip.com
+flexupload.com
