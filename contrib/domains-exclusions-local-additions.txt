@@ -46,10 +46,14 @@ starfieldtech.com
 entrust.net
 crl.microsoft.com
 
-## NTP Pool Project
-ntp.org
+# Twitch
+player.twitch.tv
+spade.twitch.tv
+countess.twitch.tv
+
 
 ## Other sites
+ntp.org
 adobe.com
 ipinfo.io
 icofx.ro
