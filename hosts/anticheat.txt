@@ -4,6 +4,7 @@ appguard.co.kr
 inca.co.kr
 nprotect.com
 nprotect.co.kr
+nprotect.co.cn
 nprotect.net
 nprotect.bladeandsoul.com
 gglogserver3-lb-2062992349.ap-northeast-2.elb.amazonaws.com
@@ -24,3 +25,6 @@ xigncode-solomon-elb-1253180534.ap-northeast-2.elb.amazonaws.com
 
 # Daum Games
 defence-daumgameseu.com
+
+# Innova Frost
+frostsecurity.net
