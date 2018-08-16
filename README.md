@@ -9,7 +9,7 @@ File name | Description
 `anticheat.txt` | Hosts related to various video game anti-cheat software.
 `miscellaneous.txt` | Other hosts that don't fit into either of the above files.
 
-## Files in the `contrib` folder
+## Files in the `utils/generate-domains-blacklists` folder
 
 Files that are sourced from the dnscrypt repository's own `contrib` folder are denoted with an asterisk(*),
 and have a separate license than the rest of this repository. See `contrib\COPYING.dnscrypt`.
