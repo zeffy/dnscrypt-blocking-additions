@@ -1,4 +1,4 @@
-## Some default exclusions
+# Some default exclusions
 invalid
 amazon.com
 cdnetworks.com
@@ -9,16 +9,16 @@ spotify.com
 github.com
 github.io
 
-## Local domains
+# Local domains
 localdomain
 local
 lan
 
-## Amazon AWS
+# Amazon AWS
 s3.amazonaws.com
 elasticbeanstalk.com
 
-## Popular CDNs
+# Popular CDNs
 googleapis.com
 gstatic.com
 ajax.aspnetcdn.com
@@ -32,11 +32,11 @@ libs.baidu.com
 lib.sinaapp.com
 upcdn.b0.upaiyun.com
 
-## Discord
+# Discord
 discordapp.com
 discord.gg
 
-## CRL / OCSP
+# CRL / OCSP
 comodoca4.com
 comodoca.com
 symcb.com
@@ -57,7 +57,7 @@ countess.twitch.tv
 ssl.p.jwpcdn.com
 d2wy8f7a9ursnm.cloudfront.net
 
-## Other sites
+# Other sites
 ntp.org
 adobe.com
 ipinfo.io

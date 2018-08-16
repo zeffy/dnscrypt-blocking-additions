@@ -1,7 +1,8 @@
-dnscrypt-proxy is covered by the following license :
-
 /*
- * Copyright (c) 2011-2017 Frank Denis <j at pureftpd dot org>
+ * ISC License
+ *
+ * Copyright (c) 2018
+ * Frank Denis <j at pureftpd dot org>
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -15,17 +16,3 @@ dnscrypt-proxy is covered by the following license :
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
-
-====
-
-This license applies to all parts of dnscrypt-proxy that are not externally
-maintained libraries.
-
-The externally maintained libraries used by dnscrypt-proxy are:
-
-  - libsodium (https://github.com/jedisct1/libsodium). 2-clause BSD
-    license. Based on NaCl (http://nacl.cr.yp.to), public domain. See
-    src/libsodium/{COPYING,AUTHORS}.
-
-  - libevent (http://libevent.org/). 3-clause BSD license.
-    See src/libevent/LICENSE.
