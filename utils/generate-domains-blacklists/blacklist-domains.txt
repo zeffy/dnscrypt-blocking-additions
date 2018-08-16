@@ -22305,7 +22305,7 @@ data.service.malwarebytes.org
 ########## Blacklist from https://raw.githubusercontent.com/zeffy/dnscrypt-blocking-additions/master/hosts/miscellaneous.txt ##########
 # Ignored duplicates: 2
 xyaz.cn
-cracklife.com
+www.cracklife.com
 duapps.com
 sxp.microsoft.com
 sxpdata.microsoft.com
@@ -22354,6 +22354,7 @@ asismen.com
 asvafrqouvtam.com
 aswomen.com
 atfpjouljn.com
+aujastmvehxqmlbb.com
 ayromen.com
 ns1.backdates2.com
 bivaexusydnyp.com
@@ -22362,6 +22363,7 @@ bmnftumvop.com
 brehmen.com
 breymen.com
 brluetauvqpyjlmwr.com
+buttiorffdlxk.com
 bzfamen.com
 cdrbbebvmrmvgig.com
 cenkmen.com
@@ -22793,7 +22795,6 @@ foxeh.eu
 gacek.eu
 gadak.eu
 gadap.eu
-gadar.eu
 gadic.eu
 galad.eu
 galen.eu
@@ -54839,7 +54840,6 @@ oascentral.*
 stats.*
 tag.*
 telemetry.*
-tracker.*
 ibpxl.com
 internetbrands.com
 eth0.me
