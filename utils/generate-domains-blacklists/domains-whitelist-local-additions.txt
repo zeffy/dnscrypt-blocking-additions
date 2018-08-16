@@ -6,6 +6,8 @@ ovh.net
 pusher.com
 pusherapp.com
 spotify.com
+github.com
+github.io
 
 ## Local domains
 localdomain

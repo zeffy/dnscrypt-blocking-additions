@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-# run with python generate-domains-list.py
+# run with python generate-domains-blacklist.py > list.txt.tmp && mv -f list.txt.tmp list
 
 import argparse
 import re
@@ -8,18 +8,19 @@ import sys
 import urllib2
 
 
-def parse_blacklist(content, trusted=False):
+def parse_list(content, trusted=False):
     rx_comment = re.compile(r'^(#|$)')
     rx_inline_comment = re.compile(r'\s*#\s*[a-z0-9-].*$')
     rx_u = re.compile(r'^@*\|\|([a-z0-9.-]+[.][a-z]{2,})\^?(\$(popup|third-party))?$')
-    rx_l = re.compile(r'^([a-z0-9.*-]+[.][a-z]{2,})$')
+    rx_l = re.compile(r'^([a-z0-9.-]+[.][a-z]{2,})$')
     rx_h = re.compile(r'^[0-9]{1,3}[.][0-9]{1,3}[.][0-9]{1,3}[.][0-9]{1,3}\s+([a-z0-9.-]+[.][a-z]{2,})$')
     rx_mdl = re.compile(r'^"[^"]+","([a-z0-9.-]+[.][a-z]{2,})",')
     rx_b = re.compile(r'^([a-z0-9.-]+[.][a-z]{2,}),.+,[0-9: /-]+,')
+    rx_dq = re.compile(r'^address=/([a-z0-9.-]+[.][a-z]{2,})/.')
     rx_trusted = re.compile(r'^([*a-z0-9.-]+)$')
 
     names = set()
-    rx_set = [rx_u, rx_l, rx_h, rx_mdl, rx_b]
+    rx_set = [rx_u, rx_l, rx_h, rx_mdl, rx_b, rx_dq]
     if trusted:
         rx_set = [rx_trusted]
     for line in content.splitlines():
@@ -36,22 +37,24 @@ def parse_blacklist(content, trusted=False):
     return names
 
 
-def list_from_url(url):
+def load_from_url(url):
     sys.stderr.write("Loading data from [{}]\n".format(url))
-    req = urllib2.Request(url)
+    # Some lists seem to intentionally 404 the default user-agent...
+    # Taken from https://techblog.willshouse.com/2012/01/03/most-common-user-agents/
+    req = urllib2.Request(url=url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'})
     trusted = False
     if req.get_type() == "file":
         trusted = True
     response = None
     try:
-        response = urllib2.urlopen(req, timeout=10)
+        response = urllib2.urlopen(req, timeout=int(args.timeout))
     except urllib2.URLError as err:
         raise Exception("[{}] could not be loaded: {}\n".format(url, err))
     if trusted is False and response.getcode() != 200:
         raise Exception("[{}] returned HTTP code {}\n".format(url, response.getcode()))
     content = response.read()
 
-    return parse_blacklist(content, trusted)
+    return (content, trusted)
 
 
 def name_cmp(name):
@@ -73,20 +76,18 @@ def has_suffix(names, name):
 def whitelist_from_url(url):
     if not url:
         return set()
+    content, trusted = load_from_url(url)
 
-    return list_from_url(url)
+    return parse_list(content, trusted)
 
 
-def domainlist_from_config_file(file, outfile, whitelist, ignore_retrieval_failure):
+def domainlist_from_config_file(file, outfile, whitelist, time_restricted_url, ignore_retrieval_failure):
     blacklists = {}
+    whitelisted_names = set()
     all_names = set()
     unique_names = set()
 
-    if whitelist and not re.match(r'^[a-z0-9]+:', whitelist):
-        whitelist = "file:" + whitelist
-
-    whitelisted_names = whitelist_from_url(whitelist)
-
+    # Load conf & blacklists
     with open(file) as fd:
         for line in fd:
             line = str.strip(line)
@@ -94,7 +95,8 @@ def domainlist_from_config_file(file, outfile, whitelist, ignore_retrieval_failu
                 continue
             url = line
             try:
-                names = list_from_url(url)
+                content, trusted = load_from_url(url)
+                names = parse_list(content, trusted)
                 blacklists[url] = names
                 all_names |= names
             except Exception as e:
@@ -102,8 +104,31 @@ def domainlist_from_config_file(file, outfile, whitelist, ignore_retrieval_failu
                 if not ignore_retrieval_failure:
                     exit(1)
 
+    # Time-based blacklist
+    if time_restricted_url and not re.match(r'^[a-z0-9]+:', time_restricted_url):
+        time_restricted_url = "file:" + time_restricted_url
+
+    if time_restricted_url:
+        time_restricted_content, trusted = load_from_url(time_restricted_url)
+        time_restricted_names = parse_list(time_restricted_content)
+
+        if time_restricted_names:
+            outfile.write("########## Time-based blacklist ##########\n")
+            for name in time_restricted_names:
+                outfile.write(name)
+
+        # Time restricted names should be whitelisted, or they could be always blocked
+        whitelisted_names |= time_restricted_names
+
+    # Whitelist
+    if whitelist and not re.match(r'^[a-z0-9]+:', whitelist):
+        whitelist = "file:" + whitelist
+
+    whitelisted_names |= whitelist_from_url(whitelist)
+
+    # Process blacklists
     for url, names in blacklists.items():
-        outfile.write("\n\n########## Domain list from {} ##########\n".format(url))
+        outfile.write("\n\n########## Blacklist from {} ##########\n".format(url))
         ignored, whitelisted = 0, 0
         list_names = list()
         for name in names:
@@ -119,26 +144,31 @@ def domainlist_from_config_file(file, outfile, whitelist, ignore_retrieval_failu
         if ignored:
             outfile.write("# Ignored duplicates: {}\n".format(ignored))
         if whitelisted:
-            outfile.write("# Ignored entries due to the exclusions list: {}\n".format(whitelisted))
+            outfile.write("# Ignored entries due to the whitelist: {}\n".format(whitelisted))
         for name in list_names:
             outfile.write("{}\n".format(name))
 
 
-argp = argparse.ArgumentParser(description="Create a unified domain list from a set of local and remote files")
+argp = argparse.ArgumentParser(description="Create a unified blacklist from a set of local and remote files")
 argp.add_argument("-c", "--config", default="domains-blacklist.conf",
-    help="file containing domain list sources")
-
-argp.add_argument("-x", "--exclusions-config", default="domains-exclusions.conf",
+    help="file containing blacklist sources")
+argp.add_argument("-w", "--whitelist", default="domains-whitelist.conf",
     help="file containing a set of names to exclude from the blacklist")
-
+argp.add_argument("-r", "--time-restricted", default="domains-time-restricted.txt",
+    help="file containing a set of names to be time restricted")
 argp.add_argument("-i", "--ignore-retrieval-failure", action='store_true',
     help="generate list even if some urls couldn't be retrieved")
+argp.add_argument("-t", "--timeout", default=30,
+    help="URL open timeout")
 args = argp.parse_args()
 
-xf = open('domains-exclusions.txt', 'w')
-domainlist_from_config_file(args.exclusions_config, xf, None, args.ignore_retrieval_failure)
-xf.close()
+time_restricted = args.time_restricted
+ignore_retrieval_failure = args.ignore_retrieval_failure
 
-f = open('mybase.txt', 'w')
-domainlist_from_config_file(args.config, f, "domains-exclusions.txt", args.ignore_retrieval_failure)
+wf = open('whitelist-domains.txt', 'w')
+domainlist_from_config_file(args.whitelist, wf, None, time_restricted, ignore_retrieval_failure)
+wf.close()
+
+f = open('blacklist-domains.txt', 'w')
+domainlist_from_config_file(args.config, f, "whitelist-domains.txt", time_restricted, ignore_retrieval_failure)
 f.close()
