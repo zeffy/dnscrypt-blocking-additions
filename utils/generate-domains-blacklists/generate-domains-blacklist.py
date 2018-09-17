@@ -169,6 +169,6 @@ wf = open('whitelist-domains.txt', 'w')
 domainlist_from_config_file(args.whitelist, wf, None, time_restricted, ignore_retrieval_failure)
 wf.close()
 
-f = open('blacklist-domains.txt', 'w')
+f = open('blacklist.txt', 'w')
 domainlist_from_config_file(args.config, f, "whitelist-domains.txt", time_restricted, ignore_retrieval_failure)
 f.close()
