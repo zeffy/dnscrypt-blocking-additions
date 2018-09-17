@@ -24,5 +24,5 @@ duapps.com
 dl.memuplay.com
 www.microvirt.com.cn
 
-# Firefox
-incoming.telemetry.mozilla.org
+# Mozilla
+telemetry.mozilla.org
