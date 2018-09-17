@@ -65,6 +65,7 @@ bl2p.wns.windows.com
 client.wns.windows.com
 db3wns2011111.wns.windows.com
 db5.wns.windows.com
+db5p.wns.windows.com
 db5sch101100122.wns.windows.com
 db5sch101100127.wns.windows.com
 db5sch101100831.wns.windows.com
