@@ -9,6 +9,11 @@ sxp.microsoft.com
 # StrongOD (see https://forum.exetools.com/showthread.php?t=17959)
 www.cracklife.com
 
+# Piriform
+ccleaner.tools.avcdn.net
+ip-info.ff.avast.com
+analytics.ff.avast.com
+
 # Memu Play Launcher Ads
 inmobicdn.net
 inmobi.com
@@ -18,3 +23,6 @@ api.yourxspace.net
 duapps.com
 dl.memuplay.com
 www.microvirt.com.cn
+
+# Firefox
+incoming.telemetry.mozilla.org
