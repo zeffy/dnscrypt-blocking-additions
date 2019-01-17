@@ -26,3 +26,6 @@ www.microvirt.com.cn
 
 # Mozilla
 telemetry.mozilla.org
+
+# Discord
+crash.discordapp.com

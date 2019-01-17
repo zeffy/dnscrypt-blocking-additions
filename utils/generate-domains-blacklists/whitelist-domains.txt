@@ -337,4 +337,6 @@ db6sch102091603.wns.windows.com
 db6sch102091606.wns.windows.com
 db6sch102091607.wns.windows.com
 windowsupdate.com
+bl2p.wns.notify.windows.com.akadns.net
+db5p.wns.notify.windows.com.akadns.net
 blob.sn4prdstr03a.store.core.windows.net
