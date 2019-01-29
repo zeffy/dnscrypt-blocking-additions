@@ -6,10 +6,12 @@
 File name | Description
 --------- | -----------
 `activation.txt` | License validation hosts for various software.
+`ads.txt` | Ad hosts used in various software.
 `anticheat.txt` | Hosts related to various video game anti-cheat software.
 `miscellaneous.txt` | Other hosts that don't fit into either of the above files.
+`telemetry.txt` | Telemetry hosts used in various software.
 
-## Files in the `utils/generate-domains-blacklists` folder
+## Files in the `script` folder
 
 Files that are sourced from the dnscrypt repository's own `contrib` folder are denoted with an asterisk(*),
 and have a separate license than the rest of this repository. See `contrib\COPYING.dnscrypt`.
@@ -25,11 +27,11 @@ File name | Description
 ### How to use `generate-domains-list.py`
 
 ```bat
-$ python .\generate-domains-list.py
+$ py -2 .\generate-domains-list.py
 ```
 
 Unlike the original, it is not necessary to pipe the output to a file, it does that automatically.
-The final blacklist result is written to `blacklist-domains.txt`, and the exclusions are written to `whitelist-domains.txt` (only needed for debugging).
+The final blacklist result is written to `blacklist.txt`, and the exclusions are written to `whitelist-domains.txt` (only needed for debugging).
 
 Parameter | Default value | Description
 --------- | ------------- | -----------
