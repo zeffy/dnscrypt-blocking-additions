@@ -14,6 +14,7 @@ File name | Description
 ## Whitelists
 
 File name | Description
+--------- | -----------
 `amazon.txt` | Amazon domains
 `cdn.txt` | Popular Content Distribution Network (CDN) domains
 `crl.txt` | Certificate Revocation List domains
