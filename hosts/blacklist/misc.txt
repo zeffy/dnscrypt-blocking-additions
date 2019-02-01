@@ -1,6 +1,4 @@
-
 # Local set of patterns to block
-
 ad.*
 ads.*
 banner.*
@@ -15,14 +13,14 @@ telemetry.*
 # eth0.me is hardcoded in tools such as Archey, but is not available any
 # more, causing issues such as terminal sessions taking a long time to
 # start.
-
 eth0.me
 
 # ibpxl.com is a tracker that seems to frequently have issues, causing
 # page loads to stall.
-
 ibpxl.com
 
-# ditto for that one
-
+# ditto for this one
 internetbrands.com
+
+# StrongOD (see https://forum.exetools.com/showthread.php?t=17959)
+www.cracklife.com

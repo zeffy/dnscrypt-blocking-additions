@@ -32,3 +32,13 @@ telemetry.mozilla.org
 
 # Discord
 crash.discordapp.com
+
+# Red Shell
+redshell.io
+api.redshell.io
+treasuredata.com
+api.treasuredata.com
+in.treasuredata.com
+cdn.rdshll.com
+t.redshell.io
+innervate.us

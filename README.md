@@ -1,15 +1,28 @@
 # dnscrypt-blocking-additions
 
-
-## Files in the `hosts` folder
+## Blacklists
 
 File name | Description
 --------- | -----------
-`activation.txt` | License validation hosts for various software.
-`ads.txt` | Ad hosts used in various software.
-`anticheat.txt` | Hosts related to various video game anti-cheat software.
-`miscellaneous.txt` | Other hosts that don't fit into either of the above files.
-`telemetry.txt` | Telemetry hosts used in various software.
+`activation.txt` | License validation hosts for various software
+`ads.txt` | Ad hosts used in various software
+`anticheat.txt` | Hosts related to various video game anti-cheat software
+`fakenews.txt` | Sites that deliberately spread hoaxes and disinformation
+`misc.txt` | Other hosts that don't fit into either of the above files
+`tracking.txt` | Tracking and telemetry hosts used in various software
+
+## Whitelists
+
+File name | Description
+`amazon.txt` | Amazon domains
+`cdn.txt` | Popular Content Distribution Network (CDN) domains
+`crl.txt` | Certificate Revocation List domains
+`github.txt` | GitHub domains
+`microsoft.txt` | Microsoft domains (MSDN, TechNet, Visual Studio)
+`misc.txt` | Other domains that have been blocked at some point which I've had to manually whitelist
+`ocsp.txt` | Online Certificate Status Protocol (OCSP) domains
+`social.txt` | Social media sites (Twitter, Discord)
+`video.txt` | Video hosting sites (Dumpert, Twitch)
 
 ## Files in the `script` folder
 
@@ -18,25 +31,22 @@ and have a separate license than the rest of this repository. See `contrib\COPYI
 
 File name | Description
 --------- | -----------
-`domains-blacklist.conf`* | List of various hosts files from around the web.
-`domains-blacklist-local-additions.txt`* | Local blacklist additions.
-`domains-whitelist.conf` | List of various hosts files that you want to **exclude** from the blacklist. Currently contains a list of known Windows Update hosts from crazy-max's [WindowsSpyBlocker] project.
-`domains-whitelist-local-additions.txt`* | List of exclusions to filter out more zealous hosts lists so less things break.
-`generate-domains-blacklist.py`* | Modified version of the `generate-domains-blacklist.py` script from dnscrypt.
+`blacklist.conf`* | List of various hosts files from around the web, and the ones in this repository
+`whitelist.conf` | List of various hosts files to **exclude** from the blacklist
+`make_blacklist.py`* | Modified version of the `generate-domains-blacklist.py` script from dnscrypt
 
-### How to use `generate-domains-list.py`
+### How to use `make_blacklist.py`
 
 ```bat
-$ py -2 .\generate-domains-list.py
+$ py -2 .\make_blacklist.py
 ```
 
-Unlike the original, it is not necessary to pipe the output to a file, it does that automatically.
-The final blacklist result is written to `blacklist.txt`, and the exclusions are written to `whitelist-domains.txt` (only needed for debugging).
+The final blacklist result is written to `blacklist.txt`, and the exclusions are written to `whitelist.tmp` (only needed for debugging).
 
 Parameter | Default value | Description
 --------- | ------------- | -----------
 `-c` or `--config` | `domains-blacklist.conf` | file containing domain list sources
 `-w` or `--whitelist` | `domains-whitelist.conf` | file containing a set of names to exclude from the blacklist
+`-r` or `--time-restricted` | `time-restricted.txt` | file containing a set of names to be time restricted
 `-i` or `--ignore-retrieval-failure` | - | generate list even if some urls couldn't be retrieved
-
-[WindowsSpyBlocker]: https://github.com/crazy-max/WindowsSpyBlocker
+`-t` or `--timeout` | `30` | URL open timeout

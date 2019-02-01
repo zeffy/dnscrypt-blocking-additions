@@ -1,12 +1,12 @@
-#! /usr/bin/env python
+#! /usr/bin/env python2.7
 
-# run with python generate-domains-blacklist.py
+# run with py -2 make_blacklist.py
 
 import argparse
 import re
 import sys
 import urllib2
-
+import codecs
 
 def parse_list(content, trusted=False):
     rx_comment = re.compile(r'^(#|$)')
@@ -93,9 +93,16 @@ def domainlist_from_config_file(file, outfile, whitelist, time_restricted_url, i
             line = str.strip(line)
             if str.startswith(line, "#") or line == "":
                 continue
-            url = line
+            obfus = False
+            if str.startswith(line, "obfus "):
+                obfus = True
+                url = line[6:]
+            else:
+                url = line
             try:
                 content, trusted = load_from_url(url)
+                if obfus:
+                    content = codecs.encode(content, 'rot_13')
                 names = parse_list(content, trusted)
                 blacklists[url] = names
                 all_names |= names
@@ -150,11 +157,11 @@ def domainlist_from_config_file(file, outfile, whitelist, time_restricted_url, i
 
 
 argp = argparse.ArgumentParser(description="Create a unified blacklist from a set of local and remote files")
-argp.add_argument("-c", "--config", default="domains-blacklist.conf",
+argp.add_argument("-c", "--config", default="blacklist.conf",
     help="file containing blacklist sources")
-argp.add_argument("-w", "--whitelist", default="domains-whitelist.conf",
+argp.add_argument("-w", "--whitelist", default="whitelist.conf",
     help="file containing a set of names to exclude from the blacklist")
-argp.add_argument("-r", "--time-restricted", default="domains-time-restricted.txt",
+argp.add_argument("-r", "--time-restricted", default="time-restricted.txt",
     help="file containing a set of names to be time restricted")
 argp.add_argument("-i", "--ignore-retrieval-failure", action='store_true',
     help="generate list even if some urls couldn't be retrieved")
@@ -165,10 +172,10 @@ args = argp.parse_args()
 time_restricted = args.time_restricted
 ignore_retrieval_failure = args.ignore_retrieval_failure
 
-wf = open('whitelist-domains.txt', 'w')
+wf = open('whitelist.tmp', 'w')
 domainlist_from_config_file(args.whitelist, wf, None, time_restricted, ignore_retrieval_failure)
 wf.close()
 
 f = open('blacklist.txt', 'w')
-domainlist_from_config_file(args.config, f, "whitelist-domains.txt", time_restricted, ignore_retrieval_failure)
+domainlist_from_config_file(args.config, f, "whitelist.tmp", time_restricted, ignore_retrieval_failure)
 f.close()

@@ -1,0 +1,12 @@
+googleapis.com
+gstatic.com
+ajax.aspnetcdn.com
+ajax.microsoft.com
+cdnjs.cloudflare.com
+code.jquery.com
+cdn.jsdelivr.net
+yastatic.net
+yandex.st
+libs.baidu.com
+lib.sinaapp.com
+upcdn.b0.upaiyun.com

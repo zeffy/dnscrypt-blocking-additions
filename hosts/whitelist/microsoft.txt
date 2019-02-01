@@ -1,0 +1,7 @@
+support.microsoft.com
+technet.microsoft.com
+msdn.microsoft.com
+docs.microsoft.com
+visualstudio.microsoft.com
+marketplace.visualstudio.com
+code.visualstudio.com
