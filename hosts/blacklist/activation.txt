@@ -16,3 +16,11 @@ license.piriform.com
 
 # SmartAssembly
 sawebservice.red-gate.com
+
+# TechSmith
+activation.cloud.techsmith.com
+oscount.techsmith.com
+updater.techsmith.com
+camtasiatudi.techsmith.com
+tsccloud.cloudapp.net
+assets.cloud.techsmith.com
