@@ -5,3 +5,4 @@ docs.microsoft.com
 visualstudio.microsoft.com
 marketplace.visualstudio.com
 code.visualstudio.com
+www.linkedin.com
