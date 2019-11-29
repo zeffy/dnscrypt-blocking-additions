@@ -32,8 +32,8 @@ function Rot13 {
         }
         $file = New-TemporaryFile
         try {
-            $source.url
-            $wr = Invoke-WebRequest -Uri $source.url -UseBasicParsing -Headers $headers -OutFile $file
+            "Downloading $($source.url)..."
+            Invoke-WebRequest -Uri $source.url -UseBasicParsing -Headers $headers -OutFile $file | Out-Null
             $content = Get-Content $file
             $unique = 0
             $duplicates = 0
@@ -58,12 +58,14 @@ function Rot13 {
                     }
                 }
              }
-            "Unique entries: $unique, Duplicates: $duplicates"
+            "Contains $unique unique entries, $duplicates duplicates"
         } finally {
             if ( $file ) {
                 Remove-Item $file
             }
         }
     }
+    "Saving list to $($_.filename)..."
     $list > $_.filename
+    ""
 }
