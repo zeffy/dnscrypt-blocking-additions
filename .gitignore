@@ -1,3 +1,2 @@
-.vs/
-script/blacklist.txt
-script/whitelist.tmp
+blacklist.txt
+whitelist.txt

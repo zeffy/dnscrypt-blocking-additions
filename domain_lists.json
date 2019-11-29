@@ -1,0 +1,197 @@
+[
+  {
+    "filename": "whitelist.txt",
+    "defaults": {
+      "comment_token": "#"
+    },
+    "sources": [
+      {
+        "description": "WindowsSpyBlocker - dnscrypt update list",
+        "url": "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/dnscrypt/update.txt"
+      },
+      {
+        "description": "Amazon domains",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/amazon.txt"
+      },
+      {
+        "description": "Popular Content Distribution Network (CDN) domains",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/cdn.txt"
+      },
+      {
+        "description": "Certificate Revocation List domains",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/crl.txt"
+      },
+      {
+        "description": "Local network domains",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/local.txt"
+      },
+      {
+        "description": "Microsoft domains (MSDN, TechNet, Visual Studio, LinkedIn, GitHub)",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/microsoft.txt"
+      },
+      {
+        "description": "Miscellanious domains that I've had to whitelist",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/misc.txt"
+      },
+      {
+        "description": "Online Certificate Status Protocol (OCSP) domains",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/ocsp.txt"
+      },
+      {
+        "description": "Social media domains (Twitter, Discord, Dumpert, Twitch)",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/social.txt"
+      }
+    ]
+  },
+  {
+    "filename": "blacklist.txt",
+    "defaults": {
+      "comment_token": "#"
+    },
+    "sources": [
+      {
+        "description": "hosts file for blocking spyware, advertising, analytics, tracking in games and related clients",
+        "url": "https://www.gameindustry.eu/files/hosts.txt",
+        "http_headers": {
+          "Referer": "https://www.gameindustry.eu/hosts/hosts.php",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
+        },
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S*)"
+      },
+      {
+        "description": "Master Feed of known, active and non-sinkholed C&Cs domain names",
+        "url": "https://osint.bambenekconsulting.com/feeds/c2-dommasterlist.txt",
+        "regex": "^([^\\s,]+)"
+      },
+      {
+        "description": "hpHosts - Ad and Tracking servers only",
+        "url": "https://hosts-file.net/.%5Cad_servers.txt",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S*)"
+      },
+      {
+        "description": "MVPS HOSTS",
+        "url": "http://winhelp2002.mvps.org/hosts.txt",
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S*)"
+      },
+      {
+        "description": "DNS-BH – Malware Domain Blocklist by RiskAnalytics",
+        "url": "https://mirror1.malwaredomains.com/files/justdomains"
+      },
+      {
+        "description": "abuse.ch Ransomware Domain Blocklist (RW_DOMBL)",
+        "url": "https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt"
+      },
+      {
+        "description": "MalwareDomainList.com Hosts List",
+        "url": "https://www.malwaredomainlist.com/hostslist/hosts.txt",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S*)"
+      },
+      {
+        "description": "Peter Lowe's Ad and tracking server list",
+        "url": "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=nohtml&showintro=0&mimetype=plaintext"
+      },
+      {
+        "description": "Spam404",
+        "url": "https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt"
+      },
+      {
+        "description": "Malvertising filter list by Disconnect",
+        "url": "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt"
+      },
+      {
+        "description": "Malware filter list by Disconnect",
+        "url": "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt"
+      },
+      {
+        "description": "Basic tracking list by Disconnect",
+        "url": "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt"
+      },
+      {
+        "description": "Malvertising filter list by Disconnect",
+        "url": "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt"
+      },
+      {
+        "description": "CAMELEON project - hosts file",
+        "url": "http://sysctl.org/cameleon/hosts",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S*)"
+      },
+      {
+        "description": "KADhosts - Filters to protect against scams such as SMS subscriptions",
+        "url": "https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt",
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S*)"
+      },
+      {
+        "description": "BarbBlock list (spurious and invalid DMCA takedowns)",
+        "url": "https://ssl.bblck.me/blacklists/domain-list.txt"
+      },
+      {
+        "description": "Dan Pollock's hosts list",
+        "url": "https://someonewhocares.org/hosts/zero/hosts",
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S*)"
+      },
+      {
+        "description": "NoTracking domains - No more ads, tracking and other virtual garbage",
+        "url": "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt",
+        "regex": "^address=/([^/]*)"
+      },
+      {
+        "description": "NoTracking hosts - Hostnames that cannot be blocked on a domain level",
+        "url": "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/hostnames.txt",
+        "regex": "^(?:0\\.0\\.0\\.0|::)\\s+(\\S*)"
+      },
+      {
+        "description": "Simple lists that can help prevent cryptomining in the browser or other applications.",
+        "url": "https://gitlab.com/ZeroDot1/CoinBlockerLists/raw/master/list.txt"
+      },
+      {
+        "description": "Simple lists that can help prevent cryptomining in the browser or other applications.",
+        "url": "https://gitlab.com/ZeroDot1/CoinBlockerLists/raw/master/list_optional.txt"
+      },
+      {
+        "description": "NoTrack-Blocklist contains one of the largest compilation of sites associated with tracking your online activities and invading your privacy",
+        "url": "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt"
+      },
+      {
+        "description": "NoTrack-Malware contains a much smaller list of malicious sites that don't neceassirly come under the category of tracking, but may still want to be avoided.",
+        "url": "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt"
+      },
+      {
+        "description": "list of dynamic dns providers",
+        "url": "https://mirror1.malwaredomains.com/files/dynamic_dns.txt"
+      },
+      {
+        "description": "WindowsSpyBlocker - dnscrypt spy list",
+        "url": "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/dnscrypt/spy.txt"
+      },
+      {
+        "description": "WindowsSpyBlocker - dnscrypt extra list",
+        "url": "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/dnscrypt/extra.txt"
+      },
+      {
+        "description": "License validation hosts used by various software",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/blacklists/activation.txt"
+      },
+      {
+        "description": "Advertisement hosts used by various software",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/blacklists/ads.txt"
+      },
+      {
+        "description": "Hosts related to various video game anti-cheat software",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/blacklists/anticheat.txt"
+      },
+      {
+        "description": "Domains that deliberately spread hoaxes, libel and disinformation",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/blacklists/fakenews.txt",
+        "rot13": true
+      },
+      {
+        "description": "Other blacklisted domains",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/blacklists/misc.txt"
+      },
+      {
+        "description": "Tracking and telemetry hosts used by various software",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/blacklists/tracking.txt"
+      }
+    ]
+  }
+]

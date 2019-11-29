@@ -1,3 +1,11 @@
+# Twitter
+twitter.com
+
+# Discord
+discordapp.com
+discord.gg
+cdn.discordapp.com
+
 # Twitch
 player.twitch.tv
 spade.twitch.tv

@@ -6,3 +6,8 @@ visualstudio.microsoft.com
 marketplace.visualstudio.com
 code.visualstudio.com
 www.linkedin.com
+github.com
+github.io
+git.io
+githubassets.com
+githubusercontent.com
