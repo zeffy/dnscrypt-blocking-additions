@@ -5,7 +5,7 @@ function Rot13 {
 
     foreach ( $c in $s.ToCharArray() ) {
         $i = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.IndexOf($c)
-        if ( $i -ge 0) {
+        if ( $i -ge 0 ) {
             [void]$sb.Append('NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'[$i])
         } else {
             [void]$sb.Append($c)
