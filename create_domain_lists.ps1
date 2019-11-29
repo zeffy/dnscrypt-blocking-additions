@@ -32,7 +32,7 @@
                         }
                     }
                 } elseif ( $line ) {
-                    if ( $list.Add($matches[1].Trim()) ) {
+                    if ( $list.Add($line) ) {
                         $unique++
                     } else {
                         $duplicates++
