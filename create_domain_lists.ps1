@@ -35,6 +35,9 @@ function Rot13 {
             "Downloading $($source.url)..."
             Invoke-WebRequest -Uri $source.url -UseBasicParsing -Headers $headers -OutFile $file | Out-Null
             $content = Get-Content $file
+            if ( $source.skip_lines ) {
+                $content = $content | Select-Object -Skip $source.skip_lines
+            }
             $unique = 0
             $duplicates = 0
             foreach ( $line in $content ) {

@@ -95,20 +95,14 @@
         "url": "https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt"
       },
       {
-        "description": "Malvertising filter list by Disconnect",
-        "url": "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt"
-      },
-      {
-        "description": "Malware filter list by Disconnect",
-        "url": "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt"
-      },
-      {
         "description": "Basic tracking list by Disconnect",
-        "url": "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt"
+        "url": "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt",
+        "skip_lines": 1
       },
       {
         "description": "Malvertising filter list by Disconnect",
-        "url": "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt"
+        "url": "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt",
+        "skip_lines": 1
       },
       {
         "description": "CAMELEON project - hosts file",
