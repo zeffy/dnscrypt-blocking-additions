@@ -1,13 +1,5 @@
-# Software
-adobe.com
-icofx.ro
-advancedinstaller.com
-
-# Useful websites
 ntp.org
 ipinfo.io
 icanhazip.com
 flexupload.com
-
-# GoDaddy
 godaddy.com
