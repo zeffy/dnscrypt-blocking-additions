@@ -1,3 +1,19 @@
+function Rot13 {
+    param([string]$s)
+
+    $sb = New-Object -TypeName System.Text.StringBuilder
+
+    foreach ( $c in $s.ToCharArray() ) {
+        $i = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.IndexOf($c)
+        if ( $i -ge 0) {
+            [void]$sb.Append('NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'[$i])
+        } else {
+            [void]$sb.Append($c)
+        }
+    }
+    return $sb.ToString()
+}
+
 (Get-Content -Raw '.\domain_lists.json' | ConvertFrom-Json) | % {
     $list = New-Object -TypeName System.Collections.Generic.HashSet[string]
     $defaultCommentToken = $_.defaults.comment_token
@@ -23,16 +39,19 @@
             $duplicates = 0
             foreach ( $line in $content ) {
                 $line = ($line -split $comment_token, 2)[0]
+                $entry = $null
                 if ( $source.regex ) {
                     if ( $line -match $source.regex ) {
-                        if ( $list.Add($matches[1].Trim()) ) {
-                            $unique++
-                        } else {
-                            $duplicates++
-                        }
+                        $entry = $matches[1].Trim()
                     }
                 } elseif ( $line ) {
-                    if ( $list.Add($line) ) {
+                    $entry = $line.Trim()
+                }
+                if ( $entry ) {
+                    if ( $source.rot13 ) {
+                        $entry = Rot13($entry)
+                    }
+                    if ( $list.Add($entry) ) {
                         $unique++
                     } else {
                         $duplicates++
