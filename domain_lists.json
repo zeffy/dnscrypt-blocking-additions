@@ -56,7 +56,7 @@
           "Referer": "https://www.gameindustry.eu/hosts/hosts.php",
           "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
         },
-        "regex": "^0\\.0\\.0\\.0\\s+(\\S*)"
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       },
       {
         "description": "Master Feed of known, active and non-sinkholed C&Cs domain names",
@@ -66,12 +66,12 @@
       {
         "description": "hpHosts - Ad and Tracking servers only",
         "url": "https://hosts-file.net/.%5Cad_servers.txt",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S*)"
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
         "description": "MVPS HOSTS",
         "url": "http://winhelp2002.mvps.org/hosts.txt",
-        "regex": "^0\\.0\\.0\\.0\\s+(\\S*)"
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       },
       {
         "description": "DNS-BH – Malware Domain Blocklist by RiskAnalytics",
@@ -84,7 +84,7 @@
       {
         "description": "MalwareDomainList.com Hosts List",
         "url": "https://www.malwaredomainlist.com/hostslist/hosts.txt",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S*)"
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
         "description": "Peter Lowe's Ad and tracking server list",
@@ -107,12 +107,12 @@
       {
         "description": "CAMELEON project - hosts file",
         "url": "http://sysctl.org/cameleon/hosts",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S*)"
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
         "description": "KADhosts - Filters to protect against scams such as SMS subscriptions",
         "url": "https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt",
-        "regex": "^0\\.0\\.0\\.0\\s+(\\S*)"
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       },
       {
         "description": "BarbBlock list (spurious and invalid DMCA takedowns)",
@@ -121,7 +121,7 @@
       {
         "description": "Dan Pollock's hosts list",
         "url": "https://someonewhocares.org/hosts/zero/hosts",
-        "regex": "^0\\.0\\.0\\.0\\s+(\\S*)"
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       },
       {
         "description": "NoTracking domains - No more ads, tracking and other virtual garbage",
@@ -131,15 +131,17 @@
       {
         "description": "NoTracking hosts - Hostnames that cannot be blocked on a domain level",
         "url": "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/hostnames.txt",
-        "regex": "^(?:0\\.0\\.0\\.0|::)\\s+(\\S*)"
+        "regex": "^(?:0\\.0\\.0\\.0|::)\\s+(\\S+)"
       },
       {
         "description": "Simple lists that can help prevent cryptomining in the browser or other applications.",
-        "url": "https://gitlab.com/ZeroDot1/CoinBlockerLists/raw/master/list.txt"
+        "url": "https://gitlab.com/ZeroDot1/CoinBlockerLists/raw/master/list.txt",
+        "regex": "^(\\S+)"
       },
       {
         "description": "Simple lists that can help prevent cryptomining in the browser or other applications.",
-        "url": "https://gitlab.com/ZeroDot1/CoinBlockerLists/raw/master/list_optional.txt"
+        "url": "https://gitlab.com/ZeroDot1/CoinBlockerLists/raw/master/list_optional.txt",
+        "regex": "^(\\S+)"
       },
       {
         "description": "NoTrack-Blocklist contains one of the largest compilation of sites associated with tracking your online activities and invading your privacy",
@@ -151,7 +153,8 @@
       },
       {
         "description": "list of dynamic dns providers",
-        "url": "https://mirror1.malwaredomains.com/files/dynamic_dns.txt"
+        "url": "https://mirror1.malwaredomains.com/files/dynamic_dns.txt",
+        "regex": "^(\\S+)"
       },
       {
         "description": "WindowsSpyBlocker - dnscrypt spy list",
