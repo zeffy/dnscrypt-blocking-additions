@@ -1,7 +1,7 @@
 function Rot13 {
     param([string]$s)
 
-    $sb = New-Object -TypeName System.Text.StringBuilder
+    $sb = [System.Text.StringBuilder]::new()
 
     foreach ( $c in $s.ToCharArray() ) {
         $i = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.IndexOf($c)
@@ -15,7 +15,7 @@ function Rot13 {
 }
 
 (Get-Content -Raw '.\domain_lists.json' | ConvertFrom-Json) | % {
-    $list = New-Object -TypeName System.Collections.Generic.HashSet[string]
+    $list = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
     $defaultCommentToken = $_.defaults.comment_token
     $defaultHeaders = @{}
     foreach ( $header in $_.defaults.http_headers.PSObject.Properties ) {
