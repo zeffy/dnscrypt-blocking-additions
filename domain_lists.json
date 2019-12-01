@@ -188,6 +188,31 @@
       {
         "description": "Tracking and telemetry hosts used by various software",
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/blacklists/tracking.txt"
+      }, 
+      {
+        "description": "Badd Boyz Hosts",
+        "url": "https://raw.githubusercontent.com/mitchellkrogza/Badd-Boyz-Hosts/master/hosts",
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
+      },
+      {
+        "description": "Unified hosts file with base extensions",
+        "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/data/StevenBlack/hosts",
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
+      },
+      {
+        "description": "AdAway hosts file",
+        "url": "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
+      },
+      {
+        "description": "Categorized hosts files for DNS based content blocking",
+        "url": "https://raw.githubusercontent.com/tiuxo/hosts/master/ads",
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
+      },
+      {
+        "description": "03khost - The host NO WALL,NO AD&NO Virus.",
+        "url": "https://raw.githubusercontent.com/lixuy/03khost/master/hosts",
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       }
     ]
   }
