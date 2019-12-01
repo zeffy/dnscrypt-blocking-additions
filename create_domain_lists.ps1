@@ -41,7 +41,9 @@ function Rot13 {
             $unique = 0
             $duplicates = 0
             foreach ( $line in $content ) {
-                $line = ($line -split $comment_token, 2)[0]
+                if ( $comment_token ) {
+                    $line = ($line -split $comment_token, 2)[0]
+                }
                 $entry = $null
                 if ( $source.regex ) {
                     if ( $line -match $source.regex ) {
