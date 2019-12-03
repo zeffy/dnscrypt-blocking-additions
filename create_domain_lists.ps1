@@ -38,8 +38,8 @@ function Rot13 {
             if ( $source.skip_lines ) {
                 $content = $content | Select-Object -Skip $source.skip_lines
             }
-            $unique = 0
-            $duplicates = 0
+            $count = 0
+            $total = 0
             foreach ( $line in $content ) {
                 if ( $comment_token ) {
                     $line = ($line -split $comment_token, 2)[0]
@@ -54,6 +54,7 @@ function Rot13 {
                     $entry = $line
                 }
                 if ( $entry ) {
+                    $total++
                     if ( $source.rot13 ) {
                         $entry = Rot13($entry)
                     }
@@ -65,14 +66,10 @@ function Rot13 {
                             continue
                         }
                     }
-                    if ( $list.Add($entry) ) {
-                        $unique++
-                    } else {
-                        $duplicates++
-                    }
+                    $count += [int]$list.Add($entry)
                 }
-             }
-            "Contains $unique unique entries, $duplicates duplicates"
+            }
+            "{0:N0} used out of {1:N0}" -f $count, $total
         } finally {
             if ( $file ) {
                 Remove-Item $file
