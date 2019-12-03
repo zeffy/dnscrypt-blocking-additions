@@ -51,3 +51,5 @@ s2.symcb.com
 subca.ocsp-certum.com
 t.symcd.com
 t2.symcb.com
+ocsp.pki.goog
+pki-goog.l.google.com

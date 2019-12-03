@@ -1,16 +1,6 @@
-# Twitter
 twitter.com
-
-# Discord
 discordapp.com
 discord.gg
 cdn.discordapp.com
-
-# Twitch
-player.twitch.tv
-spade.twitch.tv
-countess.twitch.tv
-
-# Dumpert
 ssl.p.jwpcdn.com
 d2wy8f7a9ursnm.cloudfront.net

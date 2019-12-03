@@ -1,5 +1,7 @@
+www.ntppool.org
 ntp.org
 ipinfo.io
 icanhazip.com
 flexupload.com
-godaddy.com
+www.godaddy.com
+www.imdb.com
