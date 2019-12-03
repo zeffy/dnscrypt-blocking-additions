@@ -44,17 +44,26 @@ function Rot13 {
                 if ( $comment_token ) {
                     $line = ($line -split $comment_token, 2)[0]
                 }
+                $line = $line.Trim()
                 $entry = $null
                 if ( $source.regex ) {
                     if ( $line -match $source.regex ) {
                         $entry = $matches[1].Trim()
                     }
                 } elseif ( $line ) {
-                    $entry = $line.Trim()
+                    $entry = $line
                 }
                 if ( $entry ) {
                     if ( $source.rot13 ) {
                         $entry = Rot13($entry)
+                    }
+                    if ( $source.not_like ) {
+                        if ( $source.not_like `
+                                | % { $entry -like $_ } `
+                                | ? { $_ } `
+                                | Select-Object -First 1 ) {
+                            continue
+                        }
                     }
                     if ( $list.Add($entry) ) {
                         $unique++
