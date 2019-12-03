@@ -59,6 +59,7 @@
         "regex": "^0\\.0\\.0\\.0\\s+(\\S+)",
         "not_like": [
           "*.map.fastly.net",
+          "*.map.fastlylb.net",
           "*.ssl.fastly.net"
         ]
       },
