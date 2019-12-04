@@ -13,3 +13,6 @@ technet.microsoft.com
 visualstudio.microsoft.com
 code.visualstudio.com
 marketplace.visualstudio.com
+dev.azure.com
+cdn.vsassets.io
+ms.gallerycdn.vsassets.io
