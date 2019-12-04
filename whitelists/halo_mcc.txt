@@ -1,0 +1,48 @@
+banprocessor.svc.halowaypoint.com
+coturn.hw-ause-prod.halowaypoint.com
+coturn.hw-ause01-prod.halowaypoint.com
+coturn.hw-sea-prod.halowaypoint.com
+coturn.hw-sea01-prod.halowaypoint.com
+coturn.hw-usw-prod.halowaypoint.com
+coturn.hw-usw01-prod.halowaypoint.com
+coturn.hw-we-prod.halowaypoint.com
+coturn.hw-we01-prod.halowaypoint.com
+# download-alt.easyanticheat.net
+# download.eac-cdn.com
+ee38.playfabapi.com
+entitlements.svc.halowaypoint.com
+gamecms-hacs.svc.halowaypoint.com
+github.com
+# gossip.easyanticheat.net
+halostats.svc.halowaypoint.com
+lobby.svc.halowaypoint.com
+login.live.com
+notification.svc.halowaypoint.com
+notify.xboxlive.com
+peoplehub.xboxlive.com
+pfmsqosprod.australiaeast.cloudapp.azure.com
+pfmsqosprod.australiasoutheast.cloudapp.azure.com
+pfmsqosprod.centralus.cloudapp.azure.com
+pfmsqosprod.eastasia.cloudapp.azure.com
+pfmsqosprod.eastus.cloudapp.azure.com
+pfmsqosprod.eastus2.cloudapp.azure.com
+pfmsqosprod.japaneast.cloudapp.azure.com
+pfmsqosprod.japanwest.cloudapp.azure.com
+pfmsqosprod.northcentralus.cloudapp.azure.com
+pfmsqosprod.northeurope.cloudapp.azure.com
+pfmsqosprod.southcentralus.cloudapp.azure.com
+pfmsqosprod.southeastasia.cloudapp.azure.com
+pfmsqosprod.westeurope.cloudapp.azure.com
+pfmsqosprod.westus.cloudapp.azure.com
+profile.xboxlive.com
+rta.xboxlive.com
+settings.svc.halowaypoint.com
+sisu.xboxlive.com
+# telemetry.svc.halowaypoint.com
+title.mgt.xboxlive.com
+userpresence.xboxlive.com
+# vortex.data.microsoft.com
+# web.vortex.data.microsoft.com
+westus.tts.speech.microsoft.com
+xblcxplatqos-brs-9-18-2-0.cloudapp.net
+xsts.auth.xboxlive.com

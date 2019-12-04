@@ -30,6 +30,10 @@
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/microsoft.txt"
       },
       {
+        "description": "Halo: The Master Chief Collection",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/halo_mcc.txt"
+      },
+      {
         "description": "Miscellanious domains that I've had to whitelist",
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/misc.txt"
       },
