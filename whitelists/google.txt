@@ -8,7 +8,7 @@ translate.google.com
 www.google.com
 www.gstatic.com
 www.youtube-nocookie.com
-youtube-ui.l.google.com
+www.youtube.com
 i.ytimg.com
 s.ytimg.com
 yt.ggpht.com
