@@ -1,0 +1,14 @@
+fonts.googleapis.com
+fonts.gstatic.com
+translate.googleusercontent.com
+lh3.googleusercontent.com
+googlevideo.com
+ssl.gstatic.com
+translate.google.com
+www.google.com
+www.gstatic.com
+www.youtube-nocookie.com
+youtube-ui.l.google.com
+i.ytimg.com
+s.ytimg.com
+yt.ggpht.com

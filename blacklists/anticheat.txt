@@ -28,3 +28,7 @@ defence-daumgameseu.com
 
 # Innova Frost
 frostsecurity.net
+
+# EasyAntiCheat
+easyanticheat.net
+eac-cdn.com

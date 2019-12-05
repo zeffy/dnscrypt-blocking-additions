@@ -10,23 +10,27 @@
         "url": "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/dnscrypt/update.txt"
       },
       {
-        "description": "Amazon domains",
+        "description": "Amazon",
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/amazon.txt"
       },
       {
-        "description": "Popular Content Distribution Network (CDN) domains",
+        "description": "Content Distribution Networks",
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/cdn.txt"
       },
       {
-        "description": "Certificate Revocation List domains",
+        "description": "Certificate Revocation Lists",
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/crl.txt"
+      },
+      {
+        "description": "Google",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/google.txt"
       },
       {
         "description": "Local network domains",
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/local.txt"
       },
       {
-        "description": "Microsoft domains (MSDN, TechNet, Visual Studio, LinkedIn, GitHub)",
+        "description": "Microsoft",
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/microsoft.txt"
       },
       {
@@ -34,15 +38,15 @@
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/halo_mcc.txt"
       },
       {
-        "description": "Miscellanious domains that I've had to whitelist",
+        "description": "Miscellanious",
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/misc.txt"
       },
       {
-        "description": "Online Certificate Status Protocol (OCSP) domains",
+        "description": "Online Certificate Status Protocol responders",
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/ocsp.txt"
       },
       {
-        "description": "Social media domains (Twitter, Discord, Dumpert, Twitch)",
+        "description": "Social media",
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/social.txt"
       }
     ]
