@@ -1,6 +1,6 @@
-twitter.com
-discordapp.com
-discord.gg
 cdn.discordapp.com
-ssl.p.jwpcdn.com
 d2wy8f7a9ursnm.cloudfront.net
+discord.gg
+discordapp.com
+ssl.p.jwpcdn.com
+twitter.com

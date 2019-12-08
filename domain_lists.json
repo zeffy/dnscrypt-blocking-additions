@@ -38,7 +38,7 @@
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/halo_mcc.txt"
       },
       {
-        "description": "Miscellanious",
+        "description": "Miscellaneous whitelisted",
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/misc.txt"
       },
       {
@@ -195,7 +195,7 @@
         "rot13": true
       },
       {
-        "description": "Other blacklisted domains",
+        "description": "Miscellaneous blacklisted",
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/blacklists/misc.txt"
       },
       {

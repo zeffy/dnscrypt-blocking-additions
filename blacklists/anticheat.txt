@@ -1,34 +1,21 @@
-# INCA nProtect
-gameguard.co.kr
-appguard.co.kr
-inca.co.kr
-nprotect.com
-nprotect.co.kr
-nprotect.co.cn
-nprotect.net
-nprotect.bladeandsoul.com
-gglogserver3-lb-2062992349.ap-northeast-2.elb.amazonaws.com
-gamesecurity-ag-gateway2-lb-1120830243.ap-northeast-2.elb.amazonaws.com
-
-# My.com
-stat.gc.my.com
-
-# NetEase
 ac.ro.gmru.net
+appguard.co.kr
+defence-daumgameseu.com
+eac-cdn.com
+easyanticheat.net
+frostsecurity.net
 gad.netease.com
-
-# Wellbia XIGNCODE
-xigncode.net
-xigncode.com
+gameguard.co.kr
+gamesecurity-ag-gateway2-lb-1120830243.ap-northeast-2.elb.amazonaws.com
+gglogserver3-lb-2062992349.ap-northeast-2.elb.amazonaws.com
+inca.co.kr
+nprotect.bladeandsoul.com
+nprotect.co.cn
+nprotect.co.kr
+nprotect.com
+nprotect.net
+stat.gc.my.com
 wellbia.com
 xigncode-solomon-elb-1253180534.ap-northeast-2.elb.amazonaws.com
-
-# Daum Games
-defence-daumgameseu.com
-
-# Innova Frost
-frostsecurity.net
-
-# EasyAntiCheat
-easyanticheat.net
-eac-cdn.com
+xigncode.com
+xigncode.net

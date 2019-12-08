@@ -1,7 +1,7 @@
-www.ntppool.org
-ntp.org
-ipinfo.io
-icanhazip.com
 flexupload.com
+icanhazip.com
+ipinfo.io
+ntp.org
+ntppool.org
 www.godaddy.com
 www.imdb.com

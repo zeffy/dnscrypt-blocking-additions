@@ -1,44 +1,31 @@
-# NVIDIA
-telemetry.nvidia.com
-
-# Microsoft Visual Studio
-vortex.data.microsoft.com
-dc.services.visualstudio.com
-sxpdata.microsoft.com
-sxp.microsoft.com
-visualstudio-devdiv-c2s.msedge.net
-az700632.vo.msecnd.net
-az667904.vo.msecnd.net
-
-# DiagTrack
-vortex-win.data.microsoft.com
-us.vortex-win.data.microsoft.com
-eu.vortex-win.data.microsoft.com
-vortex-win-sandbox.data.microsoft.com
-v10.vortex-win.data.microsoft.com
-us.vortex-win.data.microsoft.com
-eu.vortex-win.data.microsoft.com
-vortex-win-sandbox.data.microsoft.com
-vortex-win.data.microsoft.com
-settings-win.data.microsoft.com
-
-# Piriform
-ccleaner.tools.avcdn.net
-ip-info.ff.avast.com
 analytics.ff.avast.com
-
-# Mozilla
-telemetry.mozilla.org
-
-# Discord
-crash.discordapp.com
-
-# Red Shell
-redshell.io
 api.redshell.io
-treasuredata.com
 api.treasuredata.com
-in.treasuredata.com
+az667904.vo.msecnd.net
+az700632.vo.msecnd.net
+ccleaner.tools.avcdn.net
 cdn.rdshll.com
-t.redshell.io
+crash.discordapp.com
+dc.services.visualstudio.com
+eu.vortex-win.data.microsoft.com
+eu.vortex-win.data.microsoft.com
+in.treasuredata.com
 innervate.us
+ip-info.ff.avast.com
+redshell.io
+settings-win.data.microsoft.com
+sxp.microsoft.com
+sxpdata.microsoft.com
+t.redshell.io
+telemetry.mozilla.org
+telemetry.nvidia.com
+treasuredata.com
+us.vortex-win.data.microsoft.com
+us.vortex-win.data.microsoft.com
+v10.vortex-win.data.microsoft.com
+visualstudio-devdiv-c2s.msedge.net
+vortex-win-sandbox.data.microsoft.com
+vortex-win-sandbox.data.microsoft.com
+vortex-win.data.microsoft.com
+vortex-win.data.microsoft.com
+vortex.data.microsoft.com

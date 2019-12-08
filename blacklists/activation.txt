@@ -1,26 +1,15 @@
-# Acronis
-activation.acronis.com 
-web-api-tih.acronis.com
-
-# BitSum
 activate.bitsum.com
-
-# MalwareBytes
-sirius.mwbsys.com
-keystone.mwbsys.com
-data.service.malwarebytes.org
-telemetry.malwarebytes.com
-
-# Piriform
-license.piriform.com
-
-# SmartAssembly
-sawebservice.red-gate.com
-
-# TechSmith
+activation.acronis.com 
 activation.cloud.techsmith.com
-oscount.techsmith.com
-updater.techsmith.com
-camtasiatudi.techsmith.com
-tsccloud.cloudapp.net
 assets.cloud.techsmith.com
+camtasiatudi.techsmith.com
+data.service.malwarebytes.org
+keystone.mwbsys.com
+license.piriform.com
+oscount.techsmith.com
+sawebservice.red-gate.com
+sirius.mwbsys.com
+telemetry.malwarebytes.com
+tsccloud.cloudapp.net
+updater.techsmith.com
+web-api-tih.acronis.com

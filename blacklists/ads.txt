@@ -1,9 +1,8 @@
-# MEmu Play
-inmobicdn.net
-inmobi.com
-xyaz.cn
-rayjump.com
 api.yourxspace.net
-duapps.com
 dl.memuplay.com
+duapps.com
+inmobi.com
+inmobicdn.net
+rayjump.com
 www.microvirt.com.cn
+xyaz.cn

@@ -21,6 +21,7 @@ ocsp.izenpe.com
 ocsp.netsolssl.com
 ocsp.omniroot.com
 ocsp.pki-services.siemens.com
+ocsp.pki.goog
 ocsp.quovadisglobal.com
 ocsp.quovadisoffshore.com
 ocsp.rootca1.amazontrust.com
@@ -43,6 +44,7 @@ ocsp1.wosign.com
 ocsp2.globalsign.com
 ocsp2.wosign.cn
 pca-g3-ocsp.geotrust.com
+pki-goog.l.google.com
 portal.actalis.it
 qventca2g3.ocsp.quovadisglobal.com
 rootocsp-g3.pkioverheid.nl
@@ -51,5 +53,3 @@ s2.symcb.com
 subca.ocsp-certum.com
 t.symcd.com
 t2.symcb.com
-ocsp.pki.goog
-pki-goog.l.google.com
