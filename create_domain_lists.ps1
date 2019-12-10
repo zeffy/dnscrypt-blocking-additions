@@ -28,6 +28,7 @@ $except = [System.Collections.Generic.HashSet[string]]::new([System.StringCompar
                 if ( $comment_token ) {
                     $line = ($line -split $comment_token, 2)[0]
                 }
+                $line = $line.Trim()
                 if ( $source.regex ) {
                     if ( $line -match $source.regex ) {
                         $entry = $matches[1].Trim()
