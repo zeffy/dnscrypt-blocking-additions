@@ -94,14 +94,14 @@ $ProgressPreference = 'SilentlyContinue'
     $sb = [System.Text.StringBuilder]::new()
     $except = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
     $i = 0
-    $step = [int]($list.Count * 0.005)
-    Write-Host -NoNewLine "`rOptimizing... 0.00%"
+    $step = [int]($list.Count * 0.01)
+    Write-Host -NoNewLine "Optimizing list... 0%"
     foreach ( $entry in $list ) {
-        for ( $i = 0; $i -lt $str.Length; $i++ ) {
-            if ( ($str[$i] -eq [char]'?') -or ($str[$i] -eq [char]'[') ) {
+        for ( $j = 0; $j -lt $str.Length; $j++ ) {
+            if ( ($str[$j] -eq [char]'?') -or ($str[$j] -eq [char]'[') ) {
                 continue
-            } elseif ( ($str[$i] -eq [char]'*') `
-                    -and (($i -ne 0) -or ($str[$i + 1] -ne [char]'.')) ) {
+            } elseif ( ($str[$j] -eq [char]'*') `
+                    -and (($j -ne 0) -or ($str[$j + 1] -ne [char]'.')) ) {
                 continue
             }
         }
@@ -118,14 +118,16 @@ $ProgressPreference = 'SilentlyContinue'
         [void]$sb.Clear()
         $i++
         if ( ($i % $step) -eq 0 ) {
-            Write-Host -NoNewLine ("`rOptimizing... {0:P}" -f ($i / $list.Count))
+            Start-Sleep -Milliseconds 100
+            Write-Host -NoNewLine ("`rOptimizing list... {0:P0}" -f ($i / $list.Count))
         }
     }
-    "`rOptimizing... 100.00%"
+    "`rOptimizing list... 100%"
     "{0:N0} used out of {1:N0}" -f ($list.Count - $except.Count), $list.Count
     $list.ExceptWith($except)
-    "Saving list to $($_.filename)..."
+    Write-Host -NoNewLine "Saving list to $($_.filename)... "
     $list > $_.filename
+    "Done!"
     ""
 }
 [System.GC]::Collect()
