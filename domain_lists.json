@@ -72,8 +72,58 @@
         "regex": "^([^\\s,]+)"
       },
       {
-        "description": "hpHosts - Ad and Tracking servers only",
-        "url": "https://hosts-file.net/.%5Cad_servers.txt",
+        "description": "hpHosts - ad/tracking servers",
+        "url": "https://hosts-file.net/ad_servers.txt",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
+      },
+      {
+        "description": "hpHosts - malware sites",
+        "url": "https://hosts-file.net/emd.txt",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
+      },
+      {
+        "description": "hpHosts - exploit sites",
+        "url": "https://hosts-file.net/exp.txt",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
+      },
+      {
+        "description": "hpHosts - fraud sites",
+        "url": "https://hosts-file.net/fsa.txt",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
+      },
+      {
+        "description": "hpHosts - sites involved in spam",
+        "url": "https://hosts-file.net/grm.txt",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
+      },
+      {
+        "description": "hpHosts - sites spamming the hpHosts forums",
+        "url": "https://hosts-file.net/hfs.txt",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
+      },
+      {
+        "description": "hpHosts - hijack sites",
+        "url": "https://hosts-file.net/hjk.txt",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
+      },
+      {
+        "description": "hpHosts - misleading marketing",
+        "url": "https://hosts-file.net/mmt.txt",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
+      },
+      {
+        "description": "hpHosts - illegal pharmacy sites",
+        "url": "https://hosts-file.net/pha.txt",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
+      },
+      {
+        "description": "hpHosts - phishing sites",
+        "url": "https://hosts-file.net/psh.txt",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
+      },
+      {
+        "description": "hpHosts - PUP (Potentially Unwanted Programs) sites",
+        "url": "https://hosts-file.net/pup.txt",
         "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
