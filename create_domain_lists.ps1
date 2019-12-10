@@ -76,7 +76,27 @@ function Rot13 {
             }
         }
     }
+    ""
+    "Optimizing list..."
+    $sb = [System.Text.StringBuilder]::new()
+    $rlist = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
+    foreach ( $item in $list ) {
+        $parts = $item.Split('.')
+        [System.Array]::Reverse($parts)
+        foreach ( $part in $parts | Select -SkipLast 1 ) {
+            [void]$sb.Insert(0, $part)
+            if ( $list.Contains($sb.ToString()) ) {
+                [void]$rlist.Add($item)
+                break
+            }
+            [void]$sb.Insert(0, '.')
+        }
+        [void]$sb.Clear()
+    }
+    "{0:N0} used out of {1:N0}" -f ($list.Count - $rlist.Count), $list.Count
+    $list.ExceptWith($rlist)
     "Saving list to $($_.filename)..."
     $list > $_.filename
     ""
 }
+[System.GC]::Collect()
