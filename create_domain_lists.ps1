@@ -1,35 +1,9 @@
-function Rot13 {
-    param([string]$str)
-
-    $sb = [System.Text.StringBuilder]::new()
-    foreach ( $c in $str.ToCharArray() ) {
-        $i = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.IndexOf($c)
-        if ( $i -ge 0 ) {
-            [void]$sb.Append('NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'[$i])
-        } else {
-            [void]$sb.Append($c)
-        }
-    }
-    return $sb.ToString()
-}
-
-function IsPattern {
-    param([string]$str)
-
-    for ( $i = 0; $i -lt $str.Length; $i++ ) {
-        if ( ($str[$i] -eq [char]'?') -or ($str[$i] -eq [char]'[') ) {
-            return $true
-        } elseif ( ($str[$i] -eq [char]'*') -and (($i -ne 0) -and ($str[$i + 1] -ne [char]'.')) ) {
-            return $true
-        }
-    }
-    return $false
-}
-
 $ProgressPreference = 'SilentlyContinue'
+$sb = [System.Text.StringBuilder]::new()
+$list = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
+$except = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
 
 (Get-Content -Raw '.\domain_lists.json' | ConvertFrom-Json) | % {
-    $list = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
     $defaultCommentToken = $_.defaults.comment_token
     $defaultHeaders = @{}
     foreach ( $header in $_.defaults.http_headers.PSObject.Properties ) {
@@ -48,39 +22,33 @@ $ProgressPreference = 'SilentlyContinue'
         try {
             "Downloading $($source.url)..."
             Invoke-WebRequest -Uri $source.url -UseBasicParsing -Headers $headers -OutFile $file | Out-Null
-            $content = Get-Content $file
-            if ( $source.skip_lines ) {
-                $content = $content | Select-Object -Skip $source.skip_lines
-            }
             $count = 0
             $total = 0
-            foreach ( $line in $content ) {
+            foreach ( $line in [System.Linq.Enumerable]::Skip([System.IO.File]::ReadAllLines($file), $source.skip_lines) ) {
                 if ( $comment_token ) {
                     $line = ($line -split $comment_token, 2)[0]
                 }
-                $line = $line.Trim()
-                $entry = $null
+                $entry = $line.Trim()
                 if ( $source.regex ) {
-                    if ( $line -match $source.regex ) {
+                    if ( $entry -match $source.regex ) {
                         $entry = $matches[1].Trim()
                     }
-                } elseif ( $line ) {
-                    $entry = $line
                 }
                 if ( $entry ) {
-                    $total++
                     if ( $source.rot13 ) {
-                        $entry = Rot13($entry)
-                    }
-                    if ( $source.not_like ) {
-                        if ( $source.not_like `
-                                | % { $entry -like $_ } `
-                                | ? { $_ } `
-                                | Select-Object -First 1 ) {
-                            continue
+                        foreach ( $c in $entry.ToCharArray() ) {
+                            $i = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.IndexOf($c)
+                            if ( $i -ge 0 ) {
+                                [void]$sb.Append('NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'[$i])
+                            } else {
+                                [void]$sb.Append($c)
+                            }
                         }
+                        $entry = $sb.ToString()
+                        [void]$sb.Clear()
                     }
                     $count += [int]$list.Add($entry)
+                    $total++
                 }
             }
             "{0:N0} used out of {1:N0}" -f $count, $total
@@ -91,8 +59,6 @@ $ProgressPreference = 'SilentlyContinue'
         }
     }
     ""
-    $sb = [System.Text.StringBuilder]::new()
-    $except = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
     $i = 0
     $step = [int]($list.Count * 0.01)
     Write-Host -NoNewLine "Optimizing list... 0%"
@@ -101,13 +67,12 @@ $ProgressPreference = 'SilentlyContinue'
             if ( ($str[$j] -eq [char]'?') -or ($str[$j] -eq [char]'[') ) {
                 continue
             } elseif ( ($str[$j] -eq [char]'*') `
-                    -and (($j -ne 0) -or ($str[$j + 1] -ne [char]'.')) ) {
+                    -and (($j -gt 0) -or ($str[$j + 1] -ne [char]'.')) ) {
                 continue
             }
         }
         $parts = $entry -replace '^\=' -split '\.'
-        [System.Array]::Reverse($parts)
-        foreach ( $part in $parts | Select -SkipLast 1 ) {
+        foreach ( $part in [System.Linq.Enumerable]::Reverse([System.Linq.Enumerable]::Skip($parts, 1)) ) {
             [void]$sb.Insert(0, $part)
             if ( $list.Contains($sb.ToString()) ) {
                 [void]$except.Add($entry)
@@ -118,16 +83,17 @@ $ProgressPreference = 'SilentlyContinue'
         [void]$sb.Clear()
         $i++
         if ( ($i % $step) -eq 0 ) {
-            Start-Sleep -Milliseconds 100
             Write-Host -NoNewLine ("`rOptimizing list... {0:P0}" -f ($i / $list.Count))
         }
     }
     "`rOptimizing list... 100%"
     "{0:N0} used out of {1:N0}" -f ($list.Count - $except.Count), $list.Count
     $list.ExceptWith($except)
+    $except.Clear()
     Write-Host -NoNewLine "Saving list to $($_.filename)... "
     $list > $_.filename
     "Done!"
     ""
+    $list.Clear()
 }
 [System.GC]::Collect()
