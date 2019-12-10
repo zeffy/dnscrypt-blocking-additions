@@ -28,11 +28,12 @@ $except = [System.Collections.Generic.HashSet[string]]::new([System.StringCompar
                 if ( $comment_token ) {
                     $line = ($line -split $comment_token, 2)[0]
                 }
-                $entry = $line.Trim()
                 if ( $source.regex ) {
-                    if ( $entry -match $source.regex ) {
+                    if ( $line -match $source.regex ) {
                         $entry = $matches[1].Trim()
                     }
+                } else {
+                    $entry = $line.Trim()
                 }
                 if ( $entry ) {
                     if ( $source.rot13 ) {
@@ -51,17 +52,17 @@ $except = [System.Collections.Generic.HashSet[string]]::new([System.StringCompar
                     $total++
                 }
             }
-            "{0:N0} used out of {1:N0}" -f $count, $total
+            '{0:N0} used out of {1:N0}' -f $count, $total
         } finally {
             if ( $file ) {
                 Remove-Item $file
             }
         }
     }
-    ""
+    ''
     $i = 0
     $step = [int]($list.Count * 0.01)
-    Write-Host -NoNewLine "Optimizing list... 0%"
+    Write-Host -NoNewLine 'Optimizing list... 0%'
     foreach ( $entry in $list ) {
         for ( $j = 0; $j -lt $str.Length; $j++ ) {
             if ( ($str[$j] -eq [char]'?') -or ($str[$j] -eq [char]'[') ) {
@@ -87,13 +88,13 @@ $except = [System.Collections.Generic.HashSet[string]]::new([System.StringCompar
         }
     }
     "`rOptimizing list... 100%"
-    "{0:N0} used out of {1:N0}" -f ($list.Count - $except.Count), $list.Count
+    '{0:N0} used out of {1:N0}' -f ($list.Count - $except.Count), $list.Count
     $list.ExceptWith($except)
     $except.Clear()
     Write-Host -NoNewLine "Saving list to $($_.filename)... "
-    $list > $_.filename
-    "Done!"
-    ""
+    [System.IO.File]::WriteAllLines($_.filename, $list)
+    'Done!'
+    ''
     $list.Clear()
 }
 [System.GC]::Collect()
