@@ -58,18 +58,22 @@
     },
     "sources": [
       {
-        "description": "GameIndustry.eu - PC-Spiele - Mini-Version",
-        "url": "https://www.gameindustry.eu/files/hosts.txt",
-        "http_headers": {
-          "Referer": "https://www.gameindustry.eu/files/spiele/hosts",
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
-        },
-        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
+        "description": "NoTrack-Blocklist contains one of the largest compilation of sites associated with tracking your online activities and invading your privacy",
+        "url": "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt"
       },
       {
-        "description": "Master Feed of known, active and non-sinkholed C&Cs domain names",
-        "url": "https://osint.bambenekconsulting.com/feeds/c2-dommasterlist.txt",
-        "regex": "^([^\\s,]+)"
+        "description": "NoTrack-Malware contains a much smaller list of malicious sites that don't neceassirly come under the category of tracking, but may still want to be avoided.",
+        "url": "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt"
+      },
+      {
+        "description": "Simple lists that can help prevent cryptomining in the browser or other applications.",
+        "url": "https://gitlab.com/ZeroDot1/CoinBlockerLists/raw/master/list.txt",
+        "regex": "^(\\S+)"
+      },
+      {
+        "description": "Simple lists that can help prevent cryptomining in the browser or other applications.",
+        "url": "https://gitlab.com/ZeroDot1/CoinBlockerLists/raw/master/list_optional.txt",
+        "regex": "^(\\S+)"
       },
       {
         "description": "hpHosts - ad/tracking servers",
@@ -127,58 +131,48 @@
         "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
-        "description": "MVPS HOSTS",
-        "url": "http://winhelp2002.mvps.org/hosts.txt",
-        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
+        "description": "list of dynamic dns providers",
+        "url": "https://mirror1.malwaredomains.com/files/dynamic_dns.txt",
+        "regex": "^(\\S+)"
       },
       {
         "description": "DNS-BH – Malware Domain Blocklist by RiskAnalytics",
         "url": "https://mirror1.malwaredomains.com/files/justdomains"
       },
       {
-        "description": "abuse.ch Ransomware Tracker Domain Blocklist (Mirror)",
-        "url": "https://raw.githubusercontent.com/zeffy/ransomwaretracker-mirror/master/RW_DOMBL.txt"
-      },
-      {
-        "description": "MalwareDomainList.com Hosts List",
-        "url": "https://www.malwaredomainlist.com/hostslist/hosts.txt",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
+        "description": "Master Feed of known, active and non-sinkholed C&Cs domain names",
+        "url": "https://osint.bambenekconsulting.com/feeds/c2-dommasterlist.txt",
+        "regex": "^([^\\s,]+)"
       },
       {
         "description": "Peter Lowe's Ad and tracking server list",
         "url": "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=nohtml&showintro=0&mimetype=plaintext"
       },
       {
+        "description": "AdAway hosts file",
+        "url": "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
+      },
+      {
+        "description": "WindowsSpyBlocker - dnscrypt extra list",
+        "url": "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/dnscrypt/extra.txt"
+      },
+      {
+        "description": "WindowsSpyBlocker - dnscrypt spy list",
+        "url": "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/dnscrypt/spy.txt"
+      },
+      {
         "description": "Spam404",
         "url": "https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt"
       },
       {
-        "description": "Basic tracking list by Disconnect",
-        "url": "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt",
-        "skip_lines": 1
-      },
-      {
-        "description": "Malvertising filter list by Disconnect",
-        "url": "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt",
-        "skip_lines": 1
-      },
-      {
-        "description": "CAMELEON project - hosts file",
-        "url": "http://sysctl.org/cameleon/hosts",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
-      },
-      {
-        "description": "KADhosts - Filters to protect against scams such as SMS subscriptions",
-        "url": "https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt",
+        "description": "03khost - The host NO WALL,NO AD&NO Virus.",
+        "url": "https://raw.githubusercontent.com/lixuy/03khost/master/hosts",
         "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       },
       {
-        "description": "BarbBlock list (spurious and invalid DMCA takedowns)",
-        "url": "https://ssl.bblck.me/blacklists/domain-list.txt"
-      },
-      {
-        "description": "Dan Pollock's hosts list",
-        "url": "https://someonewhocares.org/hosts/zero/hosts",
+        "description": "Badd Boyz Hosts",
+        "url": "https://raw.githubusercontent.com/mitchellkrogza/Badd-Boyz-Hosts/master/hosts",
         "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       },
       {
@@ -192,35 +186,19 @@
         "regex": "^(?:0\\.0\\.0\\.0|::)\\s+(\\S+)"
       },
       {
-        "description": "Simple lists that can help prevent cryptomining in the browser or other applications.",
-        "url": "https://gitlab.com/ZeroDot1/CoinBlockerLists/raw/master/list.txt",
-        "regex": "^(\\S+)"
+        "description": "KADhosts - Filters to protect against scams such as SMS subscriptions",
+        "url": "https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt",
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       },
       {
-        "description": "Simple lists that can help prevent cryptomining in the browser or other applications.",
-        "url": "https://gitlab.com/ZeroDot1/CoinBlockerLists/raw/master/list_optional.txt",
-        "regex": "^(\\S+)"
+        "description": "Unified hosts file with base extensions",
+        "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/data/StevenBlack/hosts",
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       },
       {
-        "description": "NoTrack-Blocklist contains one of the largest compilation of sites associated with tracking your online activities and invading your privacy",
-        "url": "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt"
-      },
-      {
-        "description": "NoTrack-Malware contains a much smaller list of malicious sites that don't neceassirly come under the category of tracking, but may still want to be avoided.",
-        "url": "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt"
-      },
-      {
-        "description": "list of dynamic dns providers",
-        "url": "https://mirror1.malwaredomains.com/files/dynamic_dns.txt",
-        "regex": "^(\\S+)"
-      },
-      {
-        "description": "WindowsSpyBlocker - dnscrypt spy list",
-        "url": "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/dnscrypt/spy.txt"
-      },
-      {
-        "description": "WindowsSpyBlocker - dnscrypt extra list",
-        "url": "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/dnscrypt/extra.txt"
+        "description": "Categorized hosts files for DNS based content blocking",
+        "url": "https://raw.githubusercontent.com/tiuxo/hosts/master/ads",
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       },
       {
         "description": "License validation hosts used by various software",
@@ -246,31 +224,54 @@
       {
         "description": "Tracking and telemetry hosts used by various software",
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/blacklists/tracking.txt"
-      }, 
+      },
+
       {
-        "description": "Badd Boyz Hosts",
-        "url": "https://raw.githubusercontent.com/mitchellkrogza/Badd-Boyz-Hosts/master/hosts",
+        "description": "abuse.ch Ransomware Tracker Domain Blocklist (Mirror)",
+        "url": "https://raw.githubusercontent.com/zeffy/ransomwaretracker-mirror/master/RW_DOMBL.txt"
+      },
+      {
+        "description": "Malvertising filter list by Disconnect",
+        "url": "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt",
+        "skip_lines": 1
+      },
+      {
+        "description": "Basic tracking list by Disconnect",
+        "url": "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt",
+        "skip_lines": 1
+      },
+      {
+        "description": "Dan Pollock's hosts list",
+        "url": "https://someonewhocares.org/hosts/zero/hosts",
         "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       },
       {
-        "description": "Unified hosts file with base extensions",
-        "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/data/StevenBlack/hosts",
-        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
+        "description": "BarbBlock list (spurious and invalid DMCA takedowns)",
+        "url": "https://ssl.bblck.me/blacklists/domain-list.txt"
       },
       {
-        "description": "AdAway hosts file",
-        "url": "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt",
+        "description": "CAMELEON project - hosts file",
+        "url": "http://sysctl.org/cameleon/hosts",
         "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
-        "description": "Categorized hosts files for DNS based content blocking",
-        "url": "https://raw.githubusercontent.com/tiuxo/hosts/master/ads",
+        "description": "MVPS HOSTS",
+        "url": "http://winhelp2002.mvps.org/hosts.txt",
         "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       },
       {
-        "description": "03khost - The host NO WALL,NO AD&NO Virus.",
-        "url": "https://raw.githubusercontent.com/lixuy/03khost/master/hosts",
+        "description": "GameIndustry.eu - PC-Spiele - Mini-Version",
+        "url": "https://www.gameindustry.eu/files/spiele/hosts",
+        "http_headers": {
+          "Referer": "https://www.gameindustry.eu/hosts/hosts.php",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
+        },
         "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
+      },
+      {
+        "description": "MalwareDomainList.com Hosts List",
+        "url": "https://www.malwaredomainlist.com/hostslist/hosts.txt",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       }
     ]
   }
