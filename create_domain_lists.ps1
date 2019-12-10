@@ -1,9 +1,8 @@
 function Rot13 {
-    param([string]$s)
+    param([string]$str)
 
     $sb = [System.Text.StringBuilder]::new()
-
-    foreach ( $c in $s.ToCharArray() ) {
+    foreach ( $c in $str.ToCharArray() ) {
         $i = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.IndexOf($c)
         if ( $i -ge 0 ) {
             [void]$sb.Append('NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'[$i])
@@ -13,6 +12,21 @@ function Rot13 {
     }
     return $sb.ToString()
 }
+
+function IsPattern {
+    param([string]$str)
+
+    for ( $i = 0; $i -lt $str.Length; $i++ ) {
+        if ( ($str[$i] -eq [char]'?') -or ($str[$i] -eq [char]'[') ) {
+            return $true
+        } elseif ( ($str[$i] -eq [char]'*') -and (($i -ne 0) -and ($str[$i + 1] -ne [char]'.')) ) {
+            return $true
+        }
+    }
+    return $false
+}
+
+$ProgressPreference = 'SilentlyContinue'
 
 (Get-Content -Raw '.\domain_lists.json' | ConvertFrom-Json) | % {
     $list = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
@@ -77,24 +91,39 @@ function Rot13 {
         }
     }
     ""
-    "Optimizing list..."
     $sb = [System.Text.StringBuilder]::new()
-    $rlist = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
-    foreach ( $item in $list ) {
-        $parts = $item.Split('.')
+    $except = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
+    $i = 0
+    $step = [int]($list.Count * 0.005)
+    Write-Host -NoNewLine "`rOptimizing... 0.00%"
+    foreach ( $entry in $list ) {
+        for ( $i = 0; $i -lt $str.Length; $i++ ) {
+            if ( ($str[$i] -eq [char]'?') -or ($str[$i] -eq [char]'[') ) {
+                continue
+            } elseif ( ($str[$i] -eq [char]'*') `
+                    -and (($i -ne 0) -or ($str[$i + 1] -ne [char]'.')) ) {
+                continue
+            }
+        }
+        $parts = $entry -replace '^\=' -split '\.'
         [System.Array]::Reverse($parts)
         foreach ( $part in $parts | Select -SkipLast 1 ) {
             [void]$sb.Insert(0, $part)
             if ( $list.Contains($sb.ToString()) ) {
-                [void]$rlist.Add($item)
+                [void]$except.Add($entry)
                 break
             }
             [void]$sb.Insert(0, '.')
         }
         [void]$sb.Clear()
+        $i++
+        if ( ($i % $step) -eq 0 ) {
+            Write-Host -NoNewLine ("`rOptimizing... {0:P}" -f ($i / $list.Count))
+        }
     }
-    "{0:N0} used out of {1:N0}" -f ($list.Count - $rlist.Count), $list.Count
-    $list.ExceptWith($rlist)
+    "`rOptimizing... 100.00%"
+    "{0:N0} used out of {1:N0}" -f ($list.Count - $except.Count), $list.Count
+    $list.ExceptWith($except)
     "Saving list to $($_.filename)..."
     $list > $_.filename
     ""

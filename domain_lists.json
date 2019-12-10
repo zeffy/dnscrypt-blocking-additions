@@ -86,8 +86,8 @@
         "url": "https://mirror1.malwaredomains.com/files/justdomains"
       },
       {
-        "description": "abuse.ch Ransomware Domain Blocklist (RW_DOMBL)",
-        "url": "https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt"
+        "description": "abuse.ch Ransomware Tracker Domain Blocklist (Mirror)",
+        "url": "https://raw.githubusercontent.com/zeffy/ransomwaretracker-mirror/master/RW_DOMBL.txt"
       },
       {
         "description": "MalwareDomainList.com Hosts List",
