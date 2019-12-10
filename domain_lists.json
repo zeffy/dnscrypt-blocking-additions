@@ -58,10 +58,10 @@
     },
     "sources": [
       {
-        "description": "hosts file for blocking spyware, advertising, analytics, tracking in games and related clients",
+        "description": "GameIndustry.eu - PC-Spiele - Mini-Version",
         "url": "https://www.gameindustry.eu/files/hosts.txt",
         "http_headers": {
-          "Referer": "https://www.gameindustry.eu/hosts/hosts.php",
+          "Referer": "https://www.gameindustry.eu/files/spiele/hosts",
           "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
         },
         "regex": "^0\\.0\\.0\\.0\\s+(\\S+)",
