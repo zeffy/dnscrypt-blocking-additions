@@ -26,16 +26,16 @@
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/google.txt"
       },
       {
+        "description": "Halo: The Master Chief Collection",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/halo_mcc.txt"
+      },
+      {
         "description": "Local network domains",
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/local.txt"
       },
       {
         "description": "Microsoft",
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/microsoft.txt"
-      },
-      {
-        "description": "Halo: The Master Chief Collection",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/halo_mcc.txt"
       },
       {
         "description": "Miscellaneous whitelisted",
