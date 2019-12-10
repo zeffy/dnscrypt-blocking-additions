@@ -3,6 +3,9 @@ ajax.microsoft.com
 cdn.jsdelivr.net
 cdnjs.cloudflare.com
 code.jquery.com
+fastly.com
+fastly.net
+fastlylb.net
 googleapis.com
 gstatic.com
 lib.sinaapp.com

@@ -64,12 +64,7 @@
           "Referer": "https://www.gameindustry.eu/files/spiele/hosts",
           "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
         },
-        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)",
-        "not_like": [
-          "*.fastly.com",
-          "*.fastly.net",
-          "*.fastlylb.net",
-        ]
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       },
       {
         "description": "Master Feed of known, active and non-sinkholed C&Cs domain names",
