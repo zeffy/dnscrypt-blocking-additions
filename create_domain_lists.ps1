@@ -44,10 +44,10 @@ Using-Object ( $wc = [System.Net.WebClient]::new() ) {
                 $comment_token = $_.defaults.comment_token
             }
             foreach ( $header in $_.defaults.http_headers.PSObject.Properties ) {
-                $wc.Headers[$header.Name] = $header.Value)
+                $wc.Headers[$header.Name] = $header.Value
             }
             foreach ( $header in $source.http_headers.PSObject.Properties ) {
-                $wc.Headers[$header.Name] = $header.Value)
+                $wc.Headers[$header.Name] = $header.Value
             }
             "Downloading $($source.url)..."
             Using-Object ( $stream = $wc.OpenRead($source.url) ) {
@@ -72,9 +72,9 @@ Using-Object ( $wc = [System.Net.WebClient]::new() ) {
                     if ( $entry ) {
                         if ( $source.rot13 ) {
                             foreach ( $c in $entry.ToCharArray() ) {
-                                $i = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.IndexOf($c)
+                                $i = 'abcdefghijklmnopqrstuvwxyz'.IndexOf($c, [System.StringComparison]::OrdinalIgnoreCase)
                                 if ( $i -ge 0 ) {
-                                    [void]$sb.Append('NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'[$i])
+                                    [void]$sb.Append('nopqrstuvwxyzabcdefghijklm'[$i])
                                 } else {
                                     [void]$sb.Append($c)
                                 }
@@ -118,14 +118,14 @@ Using-Object ( $wc = [System.Net.WebClient]::new() ) {
                 Write-Host -NoNewLine ("`rOptimizing list... {0:P0}" -f ($i / $list.Count))
             }
         }
-        $sw.Stop()
-        "`rOptimizing list... Done! Took $($sw.Elapsed.TotalSeconds) seconds."
+        "`rOptimizing list... Done! Took {0:N2} seconds." -f $sw.Elapsed.TotalSeconds
         '{0:N0} used out of {1:N0}' -f ($list.Count - $except.Count), $list.Count
         $list.ExceptWith($except)
         $except.Clear()
         Write-Host -NoNewLine "Saving list to $($_.filename)... "
+        $sw.Restart()
         [System.IO.File]::WriteAllLines($_.filename, $list)
-        'Done!'
+        'Done! Took {0:N2} seconds.' -f $sw.Elapsed.TotalSeconds
         ''
         $list.Clear()
     }
