@@ -1,6 +1,7 @@
 [
   {
     "filename": "whitelist.txt",
+    "kind": "dns",
     "defaults": {
       "comment_token": "#"
     },
@@ -53,6 +54,7 @@
   },
   {
     "filename": "blacklist.txt",
+    "kind": "dns",
     "defaults": {
       "comment_token": "#"
     },
