@@ -2,5 +2,9 @@ cdn.discordapp.com
 d2wy8f7a9ursnm.cloudfront.net
 discord.gg
 discordapp.com
+i.imgur.com
 ssl.p.jwpcdn.com
-twitter.com
+=twitter.com
+=api.twitter.com
+=abs.twitter.com
+=video.twitter.com

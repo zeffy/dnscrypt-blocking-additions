@@ -1,11 +1,24 @@
+function Format-FileSize {
+    param([long]$cb)
+
+    if ( $cb ) {
+        if ( $cb -ge 1PB ) { return '{0:N2} PB' -f ($cb/1PB) }
+        if ( $cb -ge 1TB ) { return '{0:N2} TB' -f ($cb/1TB) }
+        if ( $cb -ge 1GB ) { return '{0:N2} GB' -f ($cb/1GB) }
+        if ( $cb -ge 1MB ) { return '{0:N2} MB' -f ($cb/1MB) }
+        if ( $cb -ge 1KB ) { return '{0:N2} KB' -f ($cb/1KB) }
+        return '{0} bytes' -f $cb
+    }
+    return ''
+}
+
 function IsPatternCandidate {
     param([string]$str)
 
     for ( $j = 0; $j -lt $str.Length; $j++ ) {
         if ( ($str[$j] -eq [char]'?') `
-                -or ($str[$j] -eq [char]'[') ) {
-            return $true
-        } elseif ( $str[$j] -eq [char]'*' ) {
+                -or ($str[$j] -eq [char]'[') `
+                -or ($str[$j] -eq [char]'*') ) {
             return $true
         }
     }
@@ -49,8 +62,9 @@ Using-Object ( $wc = [System.Net.WebClient]::new() ) {
             foreach ( $header in $source.http_headers.PSObject.Properties ) {
                 $wc.Headers[$header.Name] = $header.Value
             }
-            "Downloading $($source.url)..."
+            Write-Host -NoNewLine "Downloading $($source.url)... "
             Using-Object ( $stream = $wc.OpenRead($source.url) ) {
+                Format-FileSize $wc.ResponseHeaders['Content-Length']
             Using-Object ( $reader = [System.IO.StreamReader]::new($stream) ) {
                 $count = 0
                 $total = 0
@@ -100,17 +114,18 @@ Using-Object ( $wc = [System.Net.WebClient]::new() ) {
         Write-Host -NoNewLine 'Optimizing list... 0%'
         $sw = [System.Diagnostics.Stopwatch]::StartNew()
         foreach ( $entry in $list ) {
-            if ( IsPatternCandidate($entry) ) {
+            if (IsPatternCandidate $entry ) {
                 continue
             }
-            $parts = $entry -replace '^\=' -split '\.'
-            foreach ( $part in [System.Linq.Enumerable]::Reverse([System.Linq.Enumerable]::Skip($parts, 1)) ) {
+            foreach ( $part in [System.Linq.Enumerable]::Reverse( `
+                    [System.Linq.Enumerable]::Skip(($entry -replace '^\=').Split([char]'.'), 1)) ) {
+                if ( $sb.Length -gt 0 ) {
+                    [void]$sb.Insert(0, [char]'.')
+                }
                 [void]$sb.Insert(0, $part)
                 if ( $list.Contains($sb.ToString()) ) {
-                    [void]$except.Add($entry)
                     break
                 }
-                [void]$sb.Insert(0, '.')
             }
             [void]$sb.Clear()
             $i++
