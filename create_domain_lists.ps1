@@ -114,7 +114,7 @@ Using-Object ( $wc = [System.Net.WebClient]::new() ) {
         Write-Host -NoNewLine 'Optimizing list... 0%'
         $sw = [System.Diagnostics.Stopwatch]::StartNew()
         foreach ( $entry in $list ) {
-            if (IsPatternCandidate $entry ) {
+            if ( IsPatternCandidate $entry ) {
                 continue
             }
             foreach ( $part in [System.Linq.Enumerable]::Reverse( `
