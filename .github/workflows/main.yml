@@ -1,9 +1,7 @@
 ---
 name: CI
 
-on:
-  schedule:
-    - cron: '0 0 * * 0'
+on: [push]
 
 jobs:
   build:
@@ -13,9 +11,9 @@ jobs:
     - run: '& .\create_domain_lists.ps1'
     - uses: actions/upload-artifact@v1
       with: 
-        name: 'whitelist-artifact'
+        name: 'whitelist'
         path: '.\whitelist.txt'
     - uses: actions/upload-artifact@v1
       with: 
-        name: 'blacklist-artifact'
+        name: 'blacklist'
         path: '.\blacklist.txt'
