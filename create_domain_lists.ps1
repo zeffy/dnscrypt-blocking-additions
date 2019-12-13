@@ -124,6 +124,7 @@ Using-Object ( $wc = [System.Net.WebClient]::new() ) {
                 }
                 [void]$sb.Insert(0, $part)
                 if ( $list.Contains($sb.ToString()) ) {
+                    [void]$except.Add($entry)
                     break
                 }
             }
