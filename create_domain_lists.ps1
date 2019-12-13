@@ -134,14 +134,14 @@ Using-Object ( $wc = [System.Net.WebClient]::new() ) {
                 Write-Host -NoNewLine ("`rOptimizing list... {0:P0}" -f ($i / $list.Count))
             }
         }
-        "`rOptimizing list... Done! Took {0:N2} seconds." -f $sw.Elapsed.TotalSeconds
+        "`rOptimizing list... Done! Took {0:#,0.##} seconds." -f $sw.Elapsed.TotalSeconds
         '{0:N0} used out of {1:N0}' -f ($list.Count - $except.Count), $list.Count
         $list.ExceptWith($except)
         $except.Clear()
         Write-Host -NoNewLine "Saving list to $($_.filename)... "
         $sw.Restart()
         [System.IO.File]::WriteAllLines($_.filename, $list)
-        'Done! Took {0:N2} seconds.' -f $sw.Elapsed.TotalSeconds
+        'Done! Took {0:#,0.##} seconds.' -f $sw.Elapsed.TotalSeconds
         ''
         $list.Clear()
     }
