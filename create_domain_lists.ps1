@@ -38,7 +38,7 @@ function Using-Object
     try {
         & $ScriptBlock
     } finally {
-        if ($InputObject -ne $null) {
+        if ( $InputObject -ne $null ) {
             $InputObject.Dispose()
         }
     }
