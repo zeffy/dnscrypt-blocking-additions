@@ -2,11 +2,11 @@ function Format-FileSize {
     param([long]$cb)
 
     if ( $cb ) {
-        if ( $cb -ge 1PB ) { return '{0:#,##0.##} PB' -f ($cb / 1PB) }
-        if ( $cb -ge 1TB ) { return '{0:#,##0.##} TB' -f ($cb / 1TB) }
-        if ( $cb -ge 1GB ) { return '{0:#,##0.##} GB' -f ($cb / 1GB) }
-        if ( $cb -ge 1MB ) { return '{0:#,##0.##} MB' -f ($cb / 1MB) }
-        if ( $cb -ge 1KB ) { return '{0:#,##0.##} KB' -f ($cb / 1KB) }
+        if ( $cb -ge 1PB ) { return '{0:#,0.##} PB' -f ($cb / 1PB) }
+        if ( $cb -ge 1TB ) { return '{0:#,0.##} TB' -f ($cb / 1TB) }
+        if ( $cb -ge 1GB ) { return '{0:#,0.##} GB' -f ($cb / 1GB) }
+        if ( $cb -ge 1MB ) { return '{0:#,0.##} MB' -f ($cb / 1MB) }
+        if ( $cb -ge 1KB ) { return '{0:#,0.##} KB' -f ($cb / 1KB) }
         return '{0:N0} bytes' -f $cb
     }
     return ''
