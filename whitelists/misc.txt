@@ -1,7 +1,6 @@
 flexupload.com
 icanhazip.com
 ipinfo.io
-mycelium.com
 ntp.org
 ntppool.org
 www.godaddy.com
