@@ -47,6 +47,10 @@
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/misc.txt"
       },
       {
+        "description": "Mozilla",
+        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/mozilla.txt"
+      },
+      {
         "description": "Online Certificate Status Protocol responders",
         "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/ocsp.txt"
       },
