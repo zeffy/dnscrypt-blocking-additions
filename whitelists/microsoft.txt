@@ -17,6 +17,8 @@ logincdn.msauth.net
 marketplace.visualstudio.com
 ms.gallerycdn.vsassets.io
 msdn.microsoft.com
+officecdn.microsoft.com.edgesuite.net
+software-download.microsoft.com
 support.microsoft.com
 technet.microsoft.com
 visualstudio.microsoft.com
