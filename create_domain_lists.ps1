@@ -42,11 +42,12 @@ function Using-Object {
         }
     }
 }
+Set-Alias -Name using -Value Using-Object
 
 $sb = [System.Text.StringBuilder]::new()
 $list = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
 $except = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
-Using-Object ( $wc = [System.Net.WebClient]::new() ) {
+using ( $wc = [System.Net.WebClient]::new() ) {
     (Get-Content -Raw '.\domain_lists.json' | ConvertFrom-Json) | % {
         $defaultCommentToken = $_.defaults.comment_token
         foreach ( $source in $_.sources ) {
@@ -70,7 +71,7 @@ Using-Object ( $wc = [System.Net.WebClient]::new() ) {
                 $stream = $wc.OpenRead($source.url)
                 Format-FileSize $wc.ResponseHeaders['Content-Length']
             }
-            Using-Object ( $reader = [System.IO.StreamReader]::new($stream) ) {
+            using ( $reader = [System.IO.StreamReader]::new($stream) ) {
                 $count = 0
                 $total = 0
                 for ( $i = 0; $i -lt $source.skip_lines; $i++ ) {
