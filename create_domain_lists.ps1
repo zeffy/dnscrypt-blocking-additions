@@ -25,8 +25,7 @@ function IsPatternCandidate {
     return $false
 }
 
-function Using-Object
-{
+function Using-Object {
     param (
         [Parameter(Mandatory = $true)]
         [System.IDisposable]$InputObject,
@@ -152,6 +151,6 @@ Using-Object ( $wc = [System.Net.WebClient]::new() ) {
         'Done! Took {0:#,0.##} seconds.' -f $sw.Elapsed.TotalSeconds
         ''
         $list.Clear()
+        [System.GC]::Collect()
     }
 }
-[System.GC]::Collect()
