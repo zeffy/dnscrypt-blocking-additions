@@ -2,15 +2,16 @@
 name: Weekly Release
 
 on:
-  schedule:
-    - cron: 0 0 * * 0
+  push:
+    branches:
+      - master
 
 jobs:
   build:
     runs-on: [windows-latest]
     steps:
     - uses: actions/checkout@v1
-    - run: create_domain_lists.ps1
+    - run: .\create_domain_lists.ps1
       shell: pwsh
     - uses: actions/create-release@v1
       env:
