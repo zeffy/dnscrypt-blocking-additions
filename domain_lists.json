@@ -61,7 +61,7 @@
     ]
   },
   {
-    "filename": "basic-blocklist.txt",
+    "filename": "basic-blacklist.txt",
     "kind": "dns",
     "defaults": {
       "comment_token": "#"
@@ -237,7 +237,7 @@
       "comment_token": "#"
     },
     "sources": [
-      { "file": "basic-blocklist.txt" },
+      { "file": "basic-blacklist.txt" },
       {
         "desc": "An anti porn hosts file",
         "url": "https://raw.githubusercontent.com/Clefspeare13/pornhosts/master/0.0.0.0/hosts",
@@ -267,7 +267,7 @@
       "comment_token": "#"
     },
     "sources": [
-      { "file": "basic-blocklist.txt" },
+      { "file": "basic-blacklist.txt" },
       {
         "desc": "list of dynamic dns providers",
         "url": "https://mirror1.malwaredomains.com/files/dynamic_dns.txt",

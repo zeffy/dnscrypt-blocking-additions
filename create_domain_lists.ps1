@@ -58,7 +58,7 @@ Using-Object ( $wc = [System.Net.WebClient]::new() ) {
             }
             if ( $source.file ) {
                 $stream = [System.IO.FileStream]::new($source.file, [System.IO.FileMode]::Open)
-                Write-Host -NoNewLine "Processing $($source.url)... "
+                Write-Host -NoNewLine "Processing $($source.file)... "
                 Format-FileSize $stream.Length
             } else {
                 foreach ( $header in $_.defaults.http_headers.PSObject.Properties ) {
