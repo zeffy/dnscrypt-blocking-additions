@@ -4,6 +4,9 @@ name: CI
 on:
   schedule:
     - cron: '0 0 * * 0'
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -17,5 +20,13 @@ jobs:
         path: '.\whitelist.txt'
     - uses: actions/upload-artifact@v1
       with: 
-        name: 'blacklist'
-        path: '.\blacklist.txt'
+        name: 'basic-blacklist'
+        path: '.\basic-blacklist.txt'
+    - uses: actions/upload-artifact@v1
+      with: 
+        name: 'family-friendly-blacklist'
+        path: '.\family-friendly-blacklist.txt'
+    - uses: actions/upload-artifact@v1
+      with: 
+        name: 'advanced-blacklist'
+        path: '.\advanced-blacklist.txt'

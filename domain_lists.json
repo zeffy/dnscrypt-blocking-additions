@@ -7,281 +7,315 @@
     },
     "sources": [
       {
-        "description": "WindowsSpyBlocker - dnscrypt update list",
+        "desc": "WindowsSpyBlocker - dnscrypt update list",
         "url": "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/dnscrypt/update.txt"
       },
       {
-        "description": "Amazon",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/amazon.txt"
+        "desc": "Amazon",
+        "file": "whitelists/amazon.txt"
       },
       {
-        "description": "Bitcoin",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/bitcoin.txt"
+        "desc": "Bitcoin",
+        "file": "whitelists/bitcoin.txt"
       },
       {
-        "description": "Content Distribution Networks",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/cdn.txt"
+        "desc": "Content Distribution Networks",
+        "file": "whitelists/cdn.txt"
       },
       {
-        "description": "Certificate Revocation Lists",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/crl.txt"
+        "desc": "Certificate Revocation Lists",
+        "file": "whitelists/crl.txt"
       },
       {
-        "description": "Google",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/google.txt"
+        "desc": "Google",
+        "file": "whitelists/google.txt"
       },
       {
-        "description": "Halo: The Master Chief Collection",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/halo_mcc.txt"
+        "desc": "Halo: The Master Chief Collection",
+        "file": "whitelists/halo_mcc.txt"
       },
       {
-        "description": "Local network domains",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/local.txt"
+        "desc": "Local network domains",
+        "file": "whitelists/local.txt"
       },
       {
-        "description": "Microsoft",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/microsoft.txt"
+        "desc": "Microsoft",
+        "file": "whitelists/microsoft.txt"
       },
       {
-        "description": "Miscellaneous whitelisted",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/misc.txt"
+        "desc": "Miscellaneous whitelisted",
+        "file": "whitelists/misc.txt"
       },
       {
-        "description": "Mozilla",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/mozilla.txt"
+        "desc": "Mozilla",
+        "file": "whitelists/mozilla.txt"
       },
       {
-        "description": "Online Certificate Status Protocol responders",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/ocsp.txt"
+        "desc": "Online Certificate Status Protocol responders",
+        "file": "whitelists/ocsp.txt"
       },
       {
-        "description": "Social media",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/whitelists/social.txt"
+        "desc": "Social media",
+        "file": "whitelists/social.txt"
       }
     ]
   },
   {
-    "filename": "blacklist.txt",
+    "filename": "basic-blocklist.txt",
     "kind": "dns",
     "defaults": {
       "comment_token": "#"
     },
     "sources": [
       {
-        "description": "NoTrack-Blocklist contains one of the largest compilation of sites associated with tracking your online activities and invading your privacy",
+        "desc": "NoTrack-Blocklist contains one of the largest compilation of sites associated with tracking your online activities and invading your privacy",
         "url": "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt"
       },
       {
-        "description": "NoTrack-Malware contains a much smaller list of malicious sites that don't neceassirly come under the category of tracking, but may still want to be avoided.",
+        "desc": "NoTrack-Malware contains a much smaller list of malicious sites that don't necessarily come under the category of tracking, but may still want to be avoided.",
         "url": "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt"
       },
       {
-        "description": "Simple lists that can help prevent cryptomining in the browser or other applications.",
+        "desc": "Simple lists that can help prevent cryptomining in the browser or other applications.",
         "url": "https://gitlab.com/ZeroDot1/CoinBlockerLists/raw/master/list.txt",
         "regex": "^(\\S+)"
       },
       {
-        "description": "Simple lists that can help prevent cryptomining in the browser or other applications.",
+        "desc": "Simple lists that can help prevent cryptomining in the browser or other applications.",
         "url": "https://gitlab.com/ZeroDot1/CoinBlockerLists/raw/master/list_optional.txt",
         "regex": "^(\\S+)"
       },
       {
-        "description": "hpHosts - ad/tracking servers",
+        "desc": "hpHosts - ad/tracking servers",
         "url": "https://hosts-file.net/ad_servers.txt",
         "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
-        "description": "hpHosts - malware sites",
+        "desc": "hpHosts - malware sites",
         "url": "https://hosts-file.net/emd.txt",
         "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
-        "description": "hpHosts - exploit sites",
+        "desc": "hpHosts - exploit sites",
         "url": "https://hosts-file.net/exp.txt",
         "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
-        "description": "hpHosts - fraud sites",
+        "desc": "hpHosts - fraud sites",
         "url": "https://hosts-file.net/fsa.txt",
         "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
-        "description": "hpHosts - sites involved in spam",
+        "desc": "hpHosts - sites involved in spam",
         "url": "https://hosts-file.net/grm.txt",
         "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
-        "description": "hpHosts - sites spamming the hpHosts forums",
+        "desc": "hpHosts - sites spamming the hpHosts forums",
         "url": "https://hosts-file.net/hfs.txt",
         "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
-        "description": "hpHosts - hijack sites",
+        "desc": "hpHosts - hijack sites",
         "url": "https://hosts-file.net/hjk.txt",
         "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
-        "description": "hpHosts - misleading marketing",
+        "desc": "hpHosts - misleading marketing",
         "url": "https://hosts-file.net/mmt.txt",
         "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
-        "description": "hpHosts - illegal pharmacy sites",
+        "desc": "hpHosts - illegal pharmacy sites",
         "url": "https://hosts-file.net/pha.txt",
         "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
-        "description": "hpHosts - phishing sites",
+        "desc": "hpHosts - phishing sites",
         "url": "https://hosts-file.net/psh.txt",
         "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
-        "description": "hpHosts - PUP (Potentially Unwanted Programs) sites",
+        "desc": "hpHosts - PUP (Potentially Unwanted Programs) sites",
         "url": "https://hosts-file.net/pup.txt",
         "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
-        "description": "list of dynamic dns providers",
-        "url": "https://mirror1.malwaredomains.com/files/dynamic_dns.txt",
-        "regex": "^(\\S+)"
-      },
-      {
-        "description": "DNS-BH – Malware Domain Blocklist by RiskAnalytics",
+        "desc": "DNS-BH – Malware Domain Blocklist by RiskAnalytics",
         "url": "https://mirror1.malwaredomains.com/files/justdomains"
       },
       {
-        "description": "Master Feed of known, active and non-sinkholed C&Cs domain names",
+        "desc": "Master Feed of known, active and non-sinkholed C&Cs domain names",
         "url": "https://osint.bambenekconsulting.com/feeds/c2-dommasterlist.txt",
         "regex": "^([^\\s,]+)"
       },
       {
-        "description": "Peter Lowe's Ad and tracking server list",
+        "desc": "Peter Lowe's Ad and tracking server list",
         "url": "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=nohtml&showintro=0&mimetype=plaintext"
       },
       {
-        "description": "AdAway hosts file",
+        "desc": "AdAway hosts file",
         "url": "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt",
         "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       },
       {
-        "description": "WindowsSpyBlocker - dnscrypt extra list",
-        "url": "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/dnscrypt/extra.txt"
-      },
-      {
-        "description": "WindowsSpyBlocker - dnscrypt spy list",
+        "desc": "WindowsSpyBlocker - dnscrypt spy list",
         "url": "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/dnscrypt/spy.txt"
       },
       {
-        "description": "Spam404",
+        "desc": "Spam404",
         "url": "https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt"
       },
       {
-        "description": "03khost - The host NO WALL,NO AD&NO Virus.",
-        "url": "https://raw.githubusercontent.com/lixuy/03khost/master/hosts",
-        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
-      },
-      {
-        "description": "Badd Boyz Hosts",
+        "desc": "Badd Boyz Hosts",
         "url": "https://raw.githubusercontent.com/mitchellkrogza/Badd-Boyz-Hosts/master/hosts",
         "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       },
       {
-        "description": "NoTracking domains - No more ads, tracking and other virtual garbage",
+        "desc": "NoTracking domains - No more ads, tracking and other virtual garbage",
         "url": "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt",
         "regex": "^address=/([^/]*)"
       },
       {
-        "description": "NoTracking hosts - Hostnames that cannot be blocked on a domain level",
+        "desc": "NoTracking hosts - Hostnames that cannot be blocked on a domain level",
         "url": "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/hostnames.txt",
         "regex": "^(?:0\\.0\\.0\\.0|::)\\s+(\\S+)"
       },
       {
-        "description": "KADhosts - Filters to protect against scams such as SMS subscriptions",
-        "url": "https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt",
-        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
-      },
-      {
-        "description": "Unified hosts file with base extensions",
-        "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/data/StevenBlack/hosts",
-        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
-      },
-      {
-        "description": "Categorized hosts files for DNS based content blocking",
+        "desc": "Categorized hosts files for DNS based content blocking",
         "url": "https://raw.githubusercontent.com/tiuxo/hosts/master/ads",
         "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       },
       {
-        "description": "License validation hosts used by various software",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/blacklists/activation.txt"
+        "desc": "Advertisement hosts used by various software",
+        "file": "blacklists/ads.txt"
       },
       {
-        "description": "Advertisement hosts used by various software",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/blacklists/ads.txt"
-      },
-      {
-        "description": "Hosts related to various video game anti-cheat software",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/blacklists/anticheat.txt"
-      },
-      {
-        "description": "Domains that deliberately spread hoaxes, libel and disinformation",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/blacklists/fakenews.txt",
+        "desc": "Domains that deliberately spread hoaxes, libel and disinformation",
+        "file": "blacklists/fakenews.txt",
         "rot13": true
       },
       {
-        "description": "Miscellaneous blacklisted",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/blacklists/misc.txt"
-      },
-      {
-        "description": "Tracking and telemetry hosts used by various software",
-        "url": "https://raw.githubusercontent.com/zeffy/dnscrypt-lists/master/blacklists/tracking.txt"
-      },
-
-      {
-        "description": "abuse.ch Ransomware Tracker Domain Blocklist (Mirror)",
+        "desc": "abuse.ch Ransomware Tracker Domain Blocklist (Mirror)",
         "url": "https://raw.githubusercontent.com/zeffy/ransomwaretracker-mirror/master/RW_DOMBL.txt"
       },
       {
-        "description": "Malvertising filter list by Disconnect",
+        "desc": "Malvertising filter list by Disconnect",
         "url": "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt",
         "skip_lines": 1
       },
       {
-        "description": "Basic tracking list by Disconnect",
+        "desc": "Basic tracking list by Disconnect",
         "url": "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt",
         "skip_lines": 1
       },
       {
-        "description": "Dan Pollock's hosts list",
+        "desc": "Dan Pollock's hosts list",
         "url": "https://someonewhocares.org/hosts/zero/hosts",
         "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       },
       {
-        "description": "BarbBlock list (spurious and invalid DMCA takedowns)",
+        "desc": "BarbBlock list (spurious and invalid DMCA takedowns)",
         "url": "https://ssl.bblck.me/blacklists/domain-list.txt"
       },
       {
-        "description": "CAMELEON project - hosts file",
-        "url": "http://sysctl.org/cameleon/hosts",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
-      },
-      {
-        "description": "MVPS HOSTS",
+        "desc": "MVPS HOSTS",
         "url": "http://winhelp2002.mvps.org/hosts.txt",
         "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       },
       {
-        "description": "GameIndustry.eu - PC-Spiele - Mini-Version",
+        "desc": "MalwareDomainList.com Hosts List",
+        "url": "https://www.malwaredomainlist.com/hostslist/hosts.txt",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
+      }
+    ]
+  },
+  {
+    "filename": "family-friendly-blacklist.txt",
+    "kind": "dns",
+    "defaults": {
+      "comment_token": "#"
+    },
+    "sources": [
+      { "file": "basic-blocklist.txt" },
+      {
+        "desc": "An anti porn hosts file",
+        "url": "https://raw.githubusercontent.com/Clefspeare13/pornhosts/master/0.0.0.0/hosts",
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
+      },
+      {
+        "desc": "Porn hosts from Sinfonietta",
+        "url": "https://github.com/Sinfonietta/hostfiles/raw/master/pornography-hosts",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
+      },
+      {
+        "desc": "Porn hosts from Sinfonietta",
+        "url": "https://raw.githubusercontent.com/Sinfonietta/hostfiles/master/snuff-hosts",
+        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
+      },
+      {
+        "desc": "hosts-jp",
+        "url": "https://github.com/tiuxo/hosts/raw/master/porn",
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
+      }
+    ]
+  },
+  {
+    "filename": "advanced-blacklist.txt",
+    "kind": "dns",
+    "defaults": {
+      "comment_token": "#"
+    },
+    "sources": [
+      { "file": "basic-blocklist.txt" },
+      {
+        "desc": "list of dynamic dns providers",
+        "url": "https://mirror1.malwaredomains.com/files/dynamic_dns.txt",
+        "regex": "^(\\S+)"
+      },
+      {
+        "desc": "WindowsSpyBlocker - dnscrypt extra list",
+        "url": "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/dnscrypt/extra.txt"
+      },
+      {
+        "desc": "03khost - The host NO WALL,NO AD&NO Virus.",
+        "url": "https://raw.githubusercontent.com/lixuy/03khost/master/hosts",
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
+      },
+      {
+        "desc": "KADhosts - Filters to protect against scams such as SMS subscriptions",
+        "url": "https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt",
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
+      },
+      {
+        "desc": "Unified hosts file with base extensions",
+        "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/data/StevenBlack/hosts",
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
+      },
+      {
+        "desc": "License validation hosts used by various software",
+        "file": "blacklists/activation.txt"
+      },
+      {
+        "desc": "Hosts related to various video game anti-cheat software",
+        "file": "blacklists/anticheat.txt"
+      },
+      {
+        "desc": "Miscellaneous blacklisted",
+        "file": "blacklists/misc.txt"
+      },
+      {
+        "desc": "Tracking and telemetry hosts used by various software",
+        "file": "blacklists/tracking.txt"
+      },
+      {
+        "desc": "GameIndustry.eu - PC-Spiele - Mini-Version",
         "url": "https://www.gameindustry.eu/files/spiele/hosts",
         "http_headers": {
           "Referer": "https://www.gameindustry.eu/hosts/hosts.php",
           "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
         },
         "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
-      },
-      {
-        "description": "MalwareDomainList.com Hosts List",
-        "url": "https://www.malwaredomainlist.com/hostslist/hosts.txt",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
       }
     ]
   }

@@ -56,15 +56,21 @@ Using-Object ( $wc = [System.Net.WebClient]::new() ) {
             } else {
                 $comment_token = $_.defaults.comment_token
             }
-            foreach ( $header in $_.defaults.http_headers.PSObject.Properties ) {
-                $wc.Headers[$header.Name] = $header.Value
-            }
-            foreach ( $header in $source.http_headers.PSObject.Properties ) {
-                $wc.Headers[$header.Name] = $header.Value
-            }
-            Write-Host -NoNewLine "Downloading $($source.url)... "
-            Using-Object ( $stream = $wc.OpenRead($source.url) ) {
+            if ( $source.file ) {
+                $stream = [System.IO.FileStream]::new($source.file, [System.IO.FileMode]::Open)
+                Write-Host -NoNewLine "Processing $($source.url)... "
+                Format-FileSize $stream.Length
+            } else {
+                foreach ( $header in $_.defaults.http_headers.PSObject.Properties ) {
+                    $wc.Headers[$header.Name] = $header.Value
+                }
+                foreach ( $header in $source.http_headers.PSObject.Properties ) {
+                    $wc.Headers[$header.Name] = $header.Value
+                }
+                Write-Host -NoNewLine "Downloading $($source.url)... "
+                $stream = $wc.OpenRead($source.url)
                 Format-FileSize $wc.ResponseHeaders['Content-Length']
+            }
             Using-Object ( $reader = [System.IO.StreamReader]::new($stream) ) {
                 $count = 0
                 $total = 0
@@ -106,7 +112,9 @@ Using-Object ( $wc = [System.Net.WebClient]::new() ) {
                     }
                 }
                 '{0:N0} used out of {1:N0}' -f $count, $total
-            }}
+            }
+            $stream.Dispose()
+            $stream = $null
         }
         ''
         $i = 0
