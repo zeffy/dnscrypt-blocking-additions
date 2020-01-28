@@ -1,5 +1,5 @@
 # dnscrypt-lists [![CI](https://github.com/zeffy/dnscrypt-lists/workflows/CI/badge.svg)](https://github.com/zeffy/dnscrypt-lists/actions) ![ISC](https://img.shields.io/github/license/zeffy/dnscrypt-lists)
-My personal script etc. used in combination with dnscrypt-proxy.
+My personal script etc. used in combination with [dnscrypt-proxy](https://github.com/DNSCrypt/dnscrypt-proxy).
 
 ## Configuration
 
