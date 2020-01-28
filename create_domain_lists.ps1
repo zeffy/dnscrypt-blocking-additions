@@ -42,23 +42,18 @@ function Using-Object {
         }
     }
 }
-Set-Alias -Name using -Value Using-Object
 
 $sb = [System.Text.StringBuilder]::new()
 $list = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
 $except = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
-using ( $wc = [System.Net.WebClient]::new() ) {
+Using-Object ( $wc = [System.Net.WebClient]::new() ) {
     (Get-Content -Raw '.\domain_lists.json' | ConvertFrom-Json) | % {
         $defaultCommentToken = $_.defaults.comment_token
         foreach ( $source in $_.sources ) {
-            if ( $source.comment_token ) {
-                $comment_token = $source.comment_token
-            } else {
-                $comment_token = $_.defaults.comment_token
-            }
+            $comment_token = if ( $source.comment_token ) { $source.comment_token } else { $_.defaults.comment_token }
             if ( $source.file ) {
+                Write-Host -NoNewLine "Loading $([System.IO.Path]::GetFullPath($source.file))... "
                 $stream = [System.IO.FileStream]::new($source.file, [System.IO.FileMode]::Open)
-                Write-Host -NoNewLine "Processing $($source.file)... "
                 Format-FileSize $stream.Length
             } else {
                 foreach ( $header in $_.defaults.http_headers.PSObject.Properties ) {
@@ -71,7 +66,7 @@ using ( $wc = [System.Net.WebClient]::new() ) {
                 $stream = $wc.OpenRead($source.url)
                 Format-FileSize $wc.ResponseHeaders['Content-Length']
             }
-            using ( $reader = [System.IO.StreamReader]::new($stream) ) {
+            Using-Object ( $reader = [System.IO.StreamReader]::new($stream) ) {
                 $count = 0
                 $total = 0
                 for ( $i = 0; $i -lt $source.skip_lines; $i++ ) {
@@ -82,12 +77,13 @@ using ( $wc = [System.Net.WebClient]::new() ) {
                         $line = ($line -split $comment_token, 2)[0]
                     }
                     $line = $line.Trim()
-                    if ( $source.regex ) {
-                        if ( $line -imatch $source.regex ) {
+                    $regex = if ( $source.regex ) { $source.regex } else { $_.defaults.regex }
+                    if ( $regex ) {
+                        if ( $line -imatch $regex ) {
                             $entry = $matches[1].Trim()
                         }
                     } else {
-                        $entry = $line.Trim()
+                        $entry = $line
                     }
                     if ( $entry ) {
                         if ( $source.rot13 ) {
