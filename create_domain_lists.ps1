@@ -117,7 +117,7 @@ Using-Object ( $wc = [System.Net.WebClient]::new() ) {
         }
         ''
         $i = 0
-        $step = [int]($list.Count * 0.01)
+        $step = [int]($list.Count * $(if ( $env:GITHUB_ACTIONS ) { 0.2 } else { 0.01 }))
         Write-Host -NoNewLine 'Optimizing list... 0%'
         $sw = [System.Diagnostics.Stopwatch]::StartNew()
         foreach ( $entry in $list ) {
