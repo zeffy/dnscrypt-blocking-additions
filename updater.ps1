@@ -35,7 +35,7 @@ if ( !$err `
     -and (!(Test-Path 'dnscrypt-lists.tag') `
         -or ([int]$release.tag_name -gt [int](Get-Content 'dnscrypt-lists.tag'))) ) {
 
-    $release.assets | ? { @('whitelist.zip', 'advanced-blacklist.zip') -icontains $_.name } | % {
+    $release.assets | ? { @('whitelist.zip', 'family-friendly-blacklist.zip') -icontains $_.name } | % {
         try {
             $wc = [System.Net.WebClient]::new()
             $wc.DownloadFile($_.browser_download_url, $_.name)
