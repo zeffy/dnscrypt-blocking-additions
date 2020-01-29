@@ -16,7 +16,7 @@ if ( !$err `
                 Expand-Archive -Path $asset.name -DestinationPath . -Force
                 Remove-Item -Path $asset.name, $($asset.name + '.minisig')
                 $service | Stop-Service
-                $serivice.WaitForStatus([System.ServiceProcess.ServiceControllerStatus]::Stopped)
+                $service.WaitForStatus([System.ServiceProcess.ServiceControllerStatus]::Stopped)
                 Start-Sleep -Seconds 3
                 Get-ChildItem -Path 'win64\' | Move-Item -Destination . -Force
                 $service | Start-Service
@@ -43,7 +43,7 @@ if ( !$err `
             $wc.DownloadFile($_.browser_download_url, $_.name)
             $wc.Dispose()
             $service | Stop-Service
-            $serivice.WaitForStatus([System.ServiceProcess.ServiceControllerStatus]::Stopped)
+            $service.WaitForStatus([System.ServiceProcess.ServiceControllerStatus]::Stopped)
             Start-Sleep -Seconds 3
             Expand-Archive -Path $_.name -DestinationPath . -Force
             $service | Start-Service
