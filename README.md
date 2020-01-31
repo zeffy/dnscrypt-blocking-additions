@@ -30,9 +30,9 @@ When in doubt refer to [`create_domain_lists.ps1`](https://github.com/zeffy/dnsc
 
 ## Updater
 
-This repository also contains `updater.ps1`, a PowerShell script that can be used to auto-update both dnscrypt-proxy and dnscrypt-lists.
+This repository also contains [`updater.ps1`](https://github.com/zeffy/dnscrypt-lists/blob/master/updater.ps1), a PowerShell script that can be used to automatically update both dnscrypt-proxy and dnscrypt-lists.
 
-By default it pulls `whitelist.txt` and `family-friendly-blacklist.txt` from the latest release, but can easily be modified to your needs.
+By default it will download `whitelist.txt` and `family-friendly-blacklist.txt` from the latest release, but can easily be modified to meet your individual needs.
 
 [`UriHostNameType`]: https://docs.microsoft.com/en-us/dotnet/api/system.urihostnametype?view=netframework-4.8
 [ROT13]: https://en.wikipedia.org/wiki/ROT13
