@@ -10,6 +10,7 @@ github.com
 github.io
 githubassets.com
 githubusercontent.com
+globalcdn.nuget.org
 lgincdnmsftuswe2.azureedge.net
 lgincdnvzeuno.azureedge.net
 licdn.com
