@@ -6,6 +6,7 @@ camtasiatudi.techsmith.com
 data.service.malwarebytes.org
 keystone.mwbsys.com
 license.piriform.com
+license.sublimehq.com
 oscount.techsmith.com
 sawebservice.red-gate.com
 sirius.mwbsys.com
