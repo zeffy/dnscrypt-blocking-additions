@@ -1,6 +1,7 @@
 account.live.com
 acctcdn.msauth.net
 answers.microsoft.com
+api.nuget.org
 cdn.vsassets.io
 code.visualstudio.com
 dev.azure.com
@@ -24,3 +25,4 @@ support.microsoft.com
 technet.microsoft.com
 visualstudio.microsoft.com
 www.linkedin.com
+www.nuget.org
