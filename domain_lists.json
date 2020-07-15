@@ -86,68 +86,8 @@
         "regex": "^(\\S+)"
       },
       {
-        "desc": "hpHosts - ad/tracking servers",
-        "url": "https://hosts-file.net/ad_servers.txt",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
-      },
-      {
-        "desc": "hpHosts - malware sites",
-        "url": "https://hosts-file.net/emd.txt",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
-      },
-      {
-        "desc": "hpHosts - exploit sites",
-        "url": "https://hosts-file.net/exp.txt",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
-      },
-      {
-        "desc": "hpHosts - fraud sites",
-        "url": "https://hosts-file.net/fsa.txt",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
-      },
-      {
-        "desc": "hpHosts - sites involved in spam",
-        "url": "https://hosts-file.net/grm.txt",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
-      },
-      {
-        "desc": "hpHosts - sites spamming the hpHosts forums",
-        "url": "https://hosts-file.net/hfs.txt",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
-      },
-      {
-        "desc": "hpHosts - hijack sites",
-        "url": "https://hosts-file.net/hjk.txt",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
-      },
-      {
-        "desc": "hpHosts - misleading marketing",
-        "url": "https://hosts-file.net/mmt.txt",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
-      },
-      {
-        "desc": "hpHosts - illegal pharmacy sites",
-        "url": "https://hosts-file.net/pha.txt",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
-      },
-      {
-        "desc": "hpHosts - phishing sites",
-        "url": "https://hosts-file.net/psh.txt",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
-      },
-      {
-        "desc": "hpHosts - PUP (Potentially Unwanted Programs) sites",
-        "url": "https://hosts-file.net/pup.txt",
-        "regex": "^127\\.0\\.0\\.1\\s+(\\S+)"
-      },
-      {
         "desc": "DNS-BH – Malware Domain Blocklist by RiskAnalytics",
         "url": "https://mirror1.malwaredomains.com/files/justdomains"
-      },
-      {
-        "desc": "Master Feed of known, active and non-sinkholed C&Cs domain names",
-        "url": "https://osint.bambenekconsulting.com/feeds/c2-dommasterlist.txt",
-        "regex": "^([^\\s,]+)"
       },
       {
         "desc": "Peter Lowe's Ad and tracking server list",
