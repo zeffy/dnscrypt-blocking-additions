@@ -86,10 +86,6 @@
         "regex": "^(\\S+)"
       },
       {
-        "desc": "DNS-BH – Malware Domain Blocklist by RiskAnalytics",
-        "url": "https://mirror1.malwaredomains.com/files/justdomains"
-      },
-      {
         "desc": "Peter Lowe's Ad and tracking server list",
         "url": "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=nohtml&showintro=0&mimetype=plaintext"
       },
@@ -136,6 +132,10 @@
         "rot13": true
       },
       {
+        "desc": "Malware hosts",
+        "file": "blacklists/malware.txt"
+      },
+      {
         "desc": "abuse.ch Ransomware Tracker Domain Blocklist (Mirror)",
         "url": "https://raw.githubusercontent.com/zeffy/ransomwaretracker-mirror/master/RW_DOMBL.txt"
       },
@@ -156,7 +156,7 @@
       },
       {
         "desc": "BarbBlock list (spurious and invalid DMCA takedowns)",
-        "url": "https://ssl.bblck.me/blacklists/domain-list.txt"
+        "url": "https://paulgb.github.io/BarbBlock/blacklists/domain-list.txt"
       },
       {
         "desc": "MVPS HOSTS",
@@ -209,11 +209,6 @@
     "sources": [
       { "file": "basic-blacklist.txt" },
       {
-        "desc": "list of dynamic dns providers",
-        "url": "https://mirror1.malwaredomains.com/files/dynamic_dns.txt",
-        "regex": "^(\\S+)"
-      },
-      {
         "desc": "WindowsSpyBlocker - dnscrypt extra list",
         "url": "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/dnscrypt/extra.txt"
       },
@@ -249,10 +244,19 @@
         "file": "blacklists/tracking.txt"
       },
       {
-        "desc": "GameIndustry.eu - PC-Spiele - Mini-Version",
-        "url": "https://www.gameindustry.eu/files/spiele/hosts",
+        "desc": "GameIndustry.eu - Hosts Mini-Template für Spieleclients und Spiele",
+        "url": "https://hosts.gameindustry.eu/pc-mini-template/dl/",
         "http_headers": {
-          "Referer": "https://www.gameindustry.eu/hosts/hosts.php",
+          "Referer": "https://hosts.gameindustry.eu/",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
+        },
+        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
+      },
+      {
+        "desc": "GameIndustry.eu - Hosts Template - Abusive Adblocking",
+        "url": "https://hosts.gameindustry.eu/abusive-adblocking/dl/",
+        "http_headers": {
+          "Referer": "https://hosts.gameindustry.eu/",
           "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
         },
         "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
