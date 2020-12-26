@@ -242,24 +242,6 @@
       {
         "desc": "Tracking and telemetry hosts used by various software",
         "file": "blacklists/tracking.txt"
-      },
-      {
-        "desc": "GameIndustry.eu - Hosts Mini-Template für Spieleclients und Spiele",
-        "url": "https://hosts.gameindustry.eu/pc-mini-template/dl/",
-        "http_headers": {
-          "Referer": "https://hosts.gameindustry.eu/",
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
-        },
-        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
-      },
-      {
-        "desc": "GameIndustry.eu - Hosts Template - Abusive Adblocking",
-        "url": "https://hosts.gameindustry.eu/abusive-adblocking/dl/",
-        "http_headers": {
-          "Referer": "https://hosts.gameindustry.eu/",
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
-        },
-        "regex": "^0\\.0\\.0\\.0\\s+(\\S+)"
       }
     ]
   }
